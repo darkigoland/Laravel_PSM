@@ -43,19 +43,19 @@
   <body>
 
     <!-- ########## START: LEFT PANEL ########## -->
-    @include('lecturer.body.sidebar')
+    @include('technician.body.sidebar')
     <!-- sl-sideleft -->
     <!-- ########## END: LEFT PANEL ########## -->
 
     <!-- ########## START: HEAD PANEL ########## -->
-    @include('lecturer.body.header')
+    @include('technician.body.header')
     <!-- sl-header -->
     <!-- ########## END: HEAD PANEL ########## -->
 
 
     <!-- ########## START: MAIN PANEL ########## -->
     
-@yield('lecturer')
+@yield('technician')
     <!-- sl-mainpanel -->
     <!-- ########## END: MAIN PANEL ########## -->
 

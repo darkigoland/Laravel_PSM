@@ -25,3 +25,9 @@ Route::get('/user/logout', [HomeController::class, 'Logout'])->name('user.logout
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+
+//Profile
+Route::get('profile/view', [HomeController::class, 'ProfileView'])->name('profile.view');
+
+Route::get('profile/edit', [HomeController::class, 'ProfileEdit'])->name('profile.edit');
