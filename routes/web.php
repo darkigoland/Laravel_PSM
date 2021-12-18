@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,8 @@ Route::get('/', function () {
 });
 
 route::get('/redirects',[HomeController::class,"index"]);
+
+Route::get('/user/logout', [HomeController::class, 'Logout'])->name('user.logout');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
