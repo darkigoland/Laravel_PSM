@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use app\Http\Controllers\HomeController;
+use App\Http\Controllers\SubmitController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,3 +32,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::get('profile/view', [HomeController::class, 'ProfileView'])->name('profile.view');
 
 Route::get('profile/edit', [HomeController::class, 'ProfileEdit'])->name('profile.edit');
+
+//ManageApprovalandReport
+Route::get('/submitfile',[SubmitController::class,'submitForm']);
+
+Route::post('/submitfile',[SubmitController::class,'submitFile'])->name('submit.submitfile');
