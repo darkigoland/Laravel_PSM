@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
+
+//Login
+Route::get('/redirects',[HomeController::class,"index"]);
+Route::get('/user/logout', [HomeController::class, 'Logout'])->name('user.logout');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
+
+//Profile
+Route::get('profile/view', [HomeController::class, 'ProfileView'])->name('profile.view');
+
+Route::get('profile/edit', [HomeController::class, 'ProfileEdit'])->name('profile.edit');
+
+
+//ManageApprovalandReport
+Route::get('/submitfile',[SubmitController::class,'submitForm']);
+
+Route::post('/submitfile',[SubmitController::class,'submitFile'])->name('submit.submitfile');
