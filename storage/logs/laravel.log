@@ -2080,6 +2080,7 @@
 #59 C:\\Users\\Admin\\Documents\\GitHub\\Laravel_PSM\\server.php(21): require_once('C:\\\\Users\\\\Admin\\\\...')
 #60 {main}
 "} 
+<<<<<<< HEAD
 [2021-12-19 13:44:12] local.ERROR: Target class [app\Http\Middleware\EncryptCookies] does not exist. {"exception":"[object] (Illuminate\\Contracts\\Container\\BindingResolutionException(code: 0): Target class [app\\Http\\Middleware\\EncryptCookies] does not exist. at C:\\Users\\Admin\\Documents\\GitHub\\Laravel_PSM\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php:879)
 [stacktrace]
 #0 C:\\Users\\Admin\\Documents\\GitHub\\Laravel_PSM\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(758): Illuminate\\Container\\Container->build('app\\\\Http\\\\Middle...')
@@ -2688,3 +2689,5 @@
 #8 C:\\Users\\Admin\\Documents\\GitHub\\Laravel_PSM\\server.php(21): require_once('C:\\\\Users\\\\Admin\\\\...')
 #9 {main}
 "} 
+=======
+>>>>>>> parent of 061adf16 (Update laravel.log)
