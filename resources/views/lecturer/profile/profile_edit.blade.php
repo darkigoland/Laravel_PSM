@@ -1,5 +1,7 @@
 @extends('lecturer.lect_master')
 @section('lecturer')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 
 <div class="sl-mainpanel">
       <nav class="breadcrumb sl-breadcrumb">
@@ -9,6 +11,45 @@
 
       <div class="sl-pagebody">
         <!-- CONTENT -->
+
+        <form method="post" action="{{ route('profile.store') }}" enctype="multipart/form-data">
+	 	@csrf
+            <div class="card pd-20 pd-sm-40 form-layout form-layout-4">
+              <h6 class="card-body-title">Lecturer Profile</h6>
+              <div class="mg-b-20 mg-sm-b-30">
+                <img id="showImage" class="card-img-top img-fluid" src="{{(!empty($editData->image))? url('dashboard/img/profile_img/'.$editData->image):url('dashboard/img/img12.jpg')}}" alt="{{ $editData->name }}" style="width: 15%; height: 15%;">
+                <input type="file" name="image" class="form-control" id="image" >
+              </div>
+              <div class="row mg-t-20">
+              <h5 class="card-body-title col-sm-4">Fullname: </h6>
+                <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+                    <input class="form-control" type="text" name="name" value="{{ $editData->name }}" required="" >
+                </div>
+              </div><!-- row -->
+              <div class="row mg-t-20">
+              <h5 class="card-body-title col-sm-4">Staff ID: </h6>
+                <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+                    <input class="form-control" type="text" name="staffID" value="{{ $editData->staffID }}" required="" >
+                </div>
+              </div><!-- row -->
+              <div class="row mg-t-20">
+              <h5 class="card-body-title col-sm-4">Email: </h6>
+                <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+                    <input class="form-control" type="email" name="email" value="{{ $editData->email }}" required="" >
+                </div>
+              </div><!-- row -->
+              <div class="row mg-t-20">
+              <h5 class="card-body-title col-sm-4">Phone No: </h6>
+                <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+                    <input class="form-control" type="text" name="phone" value="{{ $editData->phone }}" required="" >
+                </div>
+              </div><!-- row -->
+              <div class="form-layout-footer mg-t-30">
+                <button class="btn btn-info mg-r-5">Update</button>
+              </div><!-- form-layout-footer -->
+            </div><!-- card -->
+          </div><!-- col-6 -->
+</form>
 
 
 
@@ -29,4 +70,16 @@
       </div><!-- sl-pagebody -->
       
     </div>
+
+    <script type="text/javascript">
+	$(document).ready(function(){
+		$('#image').change(function(e){
+			var reader = new FileReader();
+			reader.onload = function(e){
+				$('#showImage').attr('src',e.target.result);
+			}
+			reader.readAsDataURL(e.target.files['0']);
+		});
+	});
+</script>
     @endsection

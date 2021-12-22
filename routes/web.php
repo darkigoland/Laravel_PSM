@@ -31,6 +31,8 @@ Route::get('profile/view', [HomeController::class, 'ProfileView'])->name('profil
 
 Route::get('profile/edit', [HomeController::class, 'ProfileEdit'])->name('profile.edit');
 
+Route::post('profile/store', [HomeController::class, 'ProfileStore'])->name('profile.store');
+
 
 //ManageApprovalandReport
 Route::get('/submitfile',[SubmitController::class,'submitForm']);
