@@ -19,19 +19,26 @@ Route::get('/', function () {
 });
 
 //Login
-Route::get('/redirects',[HomeController::class,"index"]);
+Route::get('/redirects',[HomeController::class,"index"])->name('index');
 Route::get('/user/logout', [HomeController::class, 'Logout'])->name('user.logout');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-//Profile
-Route::get('profile/view', [HomeController::class, 'ProfileView'])->name('profile.view');
+//Profile Lecturer
+Route::get('profile/view', [HomeController::class, 'LectProfileView'])->name('profile.view');
 
-Route::get('profile/edit', [HomeController::class, 'ProfileEdit'])->name('profile.edit');
+Route::get('profile/edit', [HomeController::class, 'LectProfileEdit'])->name('profile.edit');
 
-Route::post('profile/store', [HomeController::class, 'ProfileStore'])->name('profile.store');
+Route::post('profile/store', [HomeController::class, 'LectProfileStore'])->name('profile.store');
+
+//Profile Student
+Route::get('profile/view', [HomeController::class, 'StudProfileView'])->name('profile.view');
+
+Route::get('profile/edit', [HomeController::class, 'StudProfileEdit'])->name('profile.edit');
+
+Route::post('profile/store', [HomeController::class, 'StudProfileStore'])->name('profile.store');
 
 
 //ManageApprovalandReport

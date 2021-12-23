@@ -1,6 +1,6 @@
 
 
-<div class="sl-logo"><a href=""><i class="icon ion-android-star-outline"></i> PSM MS</a></div>
+<div class="sl-logo"><a href="{{route('index')}}"><i class="icon ion-android-star-outline"></i> PSM MS</a></div>
     <div class="sl-sideleft">
       <div class="input-group input-group-search">
         <input type="search" name="search" class="form-control" placeholder="Search">
@@ -11,7 +11,7 @@
 
       <label class="sidebar-label">Navigation</label>
       <div class="sl-sideleft-menu">
-        <a href="index.html" class="sl-menu-link active">
+        <a href="{{route('index')}}" class="sl-menu-link active">
           <div class="sl-menu-item">
             <i class="menu-item-icon icon ion-ios-home-outline tx-22"></i>
             <span class="menu-item-label">Lecturer Dashboard</span>

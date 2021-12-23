@@ -5,6 +5,11 @@
         <div class="navicon-left hidden-md-down"><a id="btnLeftMenu" href=""><i class="icon ion-navicon-round"></i></a></div>
         <div class="navicon-left hidden-lg-up"><a id="btnLeftMenuMobile" href=""><i class="icon ion-navicon-round"></i></a></div>
       </div><!-- sl-header-left -->
+
+      @php
+			$user = DB::table('users')->where('id',Auth::user()->id)->first();
+		  @endphp
+      
       <div class="sl-header-right">
         <nav class="nav">
           <div class="dropdown">
@@ -14,7 +19,7 @@
             </a>
             <div class="dropdown-menu dropdown-menu-header wd-200">
               <ul class="list-unstyled user-profile-nav">
-                <li><a href=""><i class="icon ion-ios-person-outline"></i> Edit Profile</a></li>
+                <li><a href="{{route('profile.view')}}"><i class="icon ion-ios-person-outline"></i> Edit Profile</a></li>
                 <li><a href=""><i class="icon ion-ios-gear-outline"></i> Change Password</a></li>
                 <li><a href="{{route('user.logout')}}"><i class="icon ion-power"></i> Sign Out</a></li>
               </ul>
