@@ -40,6 +40,8 @@ Route::get('profile/edit', [HomeController::class, 'StudProfileEdit'])->name('pr
 
 Route::post('profile/store', [HomeController::class, 'StudProfileStore'])->name('profile.store');
 
+//SVhunting
+Route::get('svhunting/list', [HomeController::class, 'SvhuntingList'])->name('svhunting.list');
 
 //ManageApprovalandReport
 Route::get('/submitfile',[SubmitController::class,'submitForm']);

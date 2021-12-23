@@ -21,7 +21,7 @@
             <span class="menu-item-label">EXPERTISE</span>
           </div><!-- menu-item -->
         </a><!-- sl-menu-link -->
-        <a href="widgets.html" class="sl-menu-link">
+        <a href="{{route('svhunting.list')}}" class="sl-menu-link">
           <div class="sl-menu-item">
             <i class="menu-item-icon icon ion-ios-navigate-outline tx-20"></i>
             <span class="menu-item-label">SV HUNTING</span>

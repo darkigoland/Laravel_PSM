@@ -106,6 +106,13 @@ public function StudProfileStore(Request $request){
 }//End Method
 
 //End Stud Profile   
+    
+    //SVHunting module
+    public function SvhuntingList(){
+        $id = Auth::user()->id;
+        $user = User::find($id);
+        return view('student.svhunting.svhunting_list',compact('user'));
+    }
 
 
 
