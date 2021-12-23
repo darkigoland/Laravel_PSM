@@ -41,6 +41,30 @@ class HomeController extends Controller
         return view('lecturer.profile.profile_edit',compact('editData'));
     }
 
+    public function ProfileStore(Request $request){
+        $data = User::find(Auth::user()->id);
+        $data->name = $request->name;
+        $data->email = $request->email;
+        $data->phone = $request->phone;
+        $data->staffID = $request->staffID;
+
+        if ($request->file('image')){
+            $file = $request->file('image');
+            @unlink(public_path('dashboard/img/profile_img/'.$data->image));
+            $filename = date('YmdHi').$file->getClientOriginalName();
+            $file->move(public_path('dashboard/img/profile_img'),$filename);
+            $data['image'] = $filename;
+        }
+        $data->save();
+
+        $notification = array(
+            'message' => 'Profile Updated Successfully',
+            'alert-type' => 'info'
+        );
+
+        return redirect()->route('profile.view')->with($notification);
+    }//End Method
+
 
 
 
