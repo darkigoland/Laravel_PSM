@@ -64,7 +64,13 @@ class HomeController extends Controller
 
         return redirect()->route('profile.view')->with($notification);
     }//End Method
-
+    
+    //SVHunting module
+    public function SvhuntingList(){
+        $id = Auth::user()->id;
+        $user = User::find($id);
+        return view('student.svhunting.svhunting_list',compact('user'));
+    }
 
 
 
