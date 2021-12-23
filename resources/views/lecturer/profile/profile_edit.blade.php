@@ -12,7 +12,7 @@
       <div class="sl-pagebody">
         <!-- CONTENT -->
 
-        <form method="post" action="{{ route('profile.store') }}" enctype="multipart/form-data">
+        <form method="post" action="{{ route('lecturer.profile.store') }}" enctype="multipart/form-data">
 	 	@csrf
             <div class="card pd-20 pd-sm-40 form-layout form-layout-4">
 
@@ -43,7 +43,7 @@
               <div class="row mg-t-20">
               <h5 class="card-body-title col-sm-4">Staff ID: </h6>
                 <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                    <input class="form-control" type="text" name="staffID" value="{{ $editData->staffID }}" required="" >
+                    <input class="form-control" type="text" name="userID" value="{{ $editData->userID }}" required="" >
                 </div>
               </div><!-- row -->
               <div class="row mg-t-20">

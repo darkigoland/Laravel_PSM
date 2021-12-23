@@ -27,18 +27,18 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 //Profile Lecturer
-Route::get('profile/view', [HomeController::class, 'LectProfileView'])->name('profile.view');
+Route::get('lecturer/profile/view', [HomeController::class, 'LectProfileView'])->name('lecturer.profile.view');
 
-Route::get('profile/edit', [HomeController::class, 'LectProfileEdit'])->name('profile.edit');
+Route::get('lecturer/profile/edit', [HomeController::class, 'LectProfileEdit'])->name('lecturer.profile.edit');
 
-Route::post('profile/store', [HomeController::class, 'LectProfileStore'])->name('profile.store');
+Route::post('lecturer/profile/store', [HomeController::class, 'LectProfileStore'])->name('lecturer.profile.store');
 
 //Profile Student
-Route::get('profile/view', [HomeController::class, 'StudProfileView'])->name('profile.view');
+Route::get('student/profile/view', [HomeController::class, 'StudProfileView'])->name('student.profile.view');
 
-Route::get('profile/edit', [HomeController::class, 'StudProfileEdit'])->name('profile.edit');
+Route::get('student/profile/edit', [HomeController::class, 'StudProfileEdit'])->name('student.profile.edit');
 
-Route::post('profile/store', [HomeController::class, 'StudProfileStore'])->name('profile.store');
+Route::post('student/profile/store', [HomeController::class, 'StudProfileStore'])->name('student.profile.store');
 
 //SVhunting
 Route::get('svhunting/list', [HomeController::class, 'SvhuntingList'])->name('svhunting.list');

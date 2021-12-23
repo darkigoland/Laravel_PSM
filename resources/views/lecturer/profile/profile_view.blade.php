@@ -70,7 +70,7 @@
             
              
               <div class="form-layout-footer mg-t-30">
-                <button class="btn btn-info mg-r-5"><a href="{{route('profile.edit')}}">Edit Profile</button>
+                <button class="btn btn-info mg-r-5"><a href="{{route('lecturer.profile.edit')}}">Edit Profile</button>
               </div><!-- form-layout-footer -->
             </div><!-- card -->
           </div><!-- col-6 -->

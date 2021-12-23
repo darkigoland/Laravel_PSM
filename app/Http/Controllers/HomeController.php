@@ -63,7 +63,7 @@ class HomeController extends Controller
             'alert-type' => 'info'
         );
 
-        return redirect()->route('profile.view')->with($notification);
+        return redirect()->route('lecturer.profile.view')->with($notification);
     }//End Method
 
     //End Lect Profile
@@ -102,7 +102,7 @@ public function StudProfileStore(Request $request){
         'alert-type' => 'info'
     );
 
-    return redirect()->route('profile.view')->with($notification);
+    return redirect()->route('student.profile.view')->with($notification);
 }//End Method
 
 //End Stud Profile   

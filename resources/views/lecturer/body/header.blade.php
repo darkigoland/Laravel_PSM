@@ -18,7 +18,7 @@
             </a>
             <div class="dropdown-menu dropdown-menu-header wd-200">
               <ul class="list-unstyled user-profile-nav">
-                <li><a href="{{route('profile.view')}}"><i class="icon ion-ios-person-outline"></i> Edit Profile</a></li>
+                <li><a href="{{route('lecturer.profile.view')}}"><i class="icon ion-ios-person-outline"></i> Edit Profile</a></li>
                 <li><a href=""><i class="icon ion-ios-gear-outline"></i> Change Password</a></li>
                 <li><a href="{{route('user.logout')}}"><i class="icon ion-power"></i> Sign Out</a></li>
               </ul>

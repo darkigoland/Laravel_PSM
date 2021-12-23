@@ -1,5 +1,5 @@
-@extends('lecturer.lect_master')
-@section('lecturer')
+@extends('student.stud_master')
+@section('student')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
@@ -12,7 +12,7 @@
       <div class="sl-pagebody">
         <!-- CONTENT -->
 
-        <form method="post" action="{{ route('profile.store') }}" enctype="multipart/form-data">
+        <form method="post" action="{{ route('student.profile.store') }}" enctype="multipart/form-data">
 	 	@csrf
             <div class="card pd-20 pd-sm-40 form-layout form-layout-4">
 
