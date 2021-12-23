@@ -31,8 +31,6 @@ Route::get('profile/view', [HomeController::class, 'ProfileView'])->name('profil
 
 Route::get('profile/edit', [HomeController::class, 'ProfileEdit'])->name('profile.edit');
 
-//SV Hunting
-Route::get('svhunting/list', [HomeController::class, 'SVhuntingList'])->name('svhunting.list');
 
 //ManageApprovalandReport
 Route::get('/submitfile',[SubmitController::class,'submitForm']);

@@ -41,12 +41,7 @@ class HomeController extends Controller
         return view('lecturer.profile.profile_edit',compact('editData'));
     }
 
-//SVHUNTING module
-    public function SVhuntingList(){
-        $id = Auth::user()->id;
-        $user = User::find($id);
-        return view('student.svhunting.svhunting_list',compact('user'));
-    }
+
 
 
 
