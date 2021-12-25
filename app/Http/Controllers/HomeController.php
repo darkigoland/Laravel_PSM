@@ -21,6 +21,7 @@ class HomeController extends Controller
         else{
             return view('lecturer.index');
         }
+
     }//end role
 
 
@@ -107,12 +108,13 @@ public function StudProfileStore(Request $request){
 
 //End Stud Profile   
     
-    //SVHunting module
-    public function SvhuntingList(){
-        $id = Auth::user()->id;
-        $user = User::find($id);
-        return view('student.svhunting.svhunting_list',compact('user'));
+//SVHunting module
+public function SvhuntingList(){
+    $id = Auth::user()->id;
+    $user = User::find($id);
+    return view('student.svhunting.svhunting_list',compact('user'));
     }
+
 
 
 

@@ -1,6 +1,8 @@
 @extends('student.stud_master')
 @section('student')
 
+<link href="{{ URL::asset('css/button.css') }}" rel="stylesheet">
+
 <div class="sl-mainpanel">
     <nav class="breadcrumb sl-breadcrumb">
         <a class="breadcrumb-item" href="index.html">PSM MS</a>
@@ -10,18 +12,27 @@
     <div class="sl-pagebody">
         <div class="card pd-20 pd-sm-40 form-layout form-layout-4">
         <table>
+  
+  @php
+	$lects = DB::select('select * from users where role = "lecturer"');
+	@endphp
+
   <tr>
     <th>Lecterur Name</th>
     <th>Setting</th>
     
   </tr>
-  <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
+@foreach ($lects as $p)
+<tr>
+<td>{{ $p->name }}</td>
+<td><a href="http://www.google.com/"><button class="button button1">Green</button></a></td>
+
+</tr>
+@endforeach
 
 </table>
  
-  </tr>
+ 
     </div>
 </div>
 @endsection
