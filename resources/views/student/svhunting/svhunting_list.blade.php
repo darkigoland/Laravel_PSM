@@ -2,6 +2,7 @@
 @section('student')
 
 <link href="{{ URL::asset('css/button.css') }}" rel="stylesheet">
+<link href="{{ URL::asset('css/table.css') }}" rel="stylesheet">
 
 <div class="sl-mainpanel">
     <nav class="breadcrumb sl-breadcrumb">
@@ -24,8 +25,8 @@
   </tr>
 @foreach ($lects as $p)
 <tr>
-<td>{{ $p->name }}</td>
-<td><a href="http://www.google.com/"><button class="button button1">Green</button></a></td>
+<td><a href="{{route('svhunting.view')}}">{{ $p->name }}</a></td>
+<td><a href="http://www.google.com/"><button class="button button1">REQUEST</button></a></td>
 
 </tr>
 @endforeach

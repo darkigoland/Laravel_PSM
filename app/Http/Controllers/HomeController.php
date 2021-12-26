@@ -115,7 +115,11 @@ public function SvhuntingList(){
     return view('student.svhunting.svhunting_list',compact('user'));
     }
 
-
+public function SvhuntingView(){
+    $id = Auth::user()->id;
+    $user = User::find($id);
+    return view('student.svhunting.svhunting_view',compact('user'));
+}
 
 
 
