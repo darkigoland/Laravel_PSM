@@ -52,7 +52,7 @@
               </div>
 
               <div class="form-layout-footer mg-t-30">
-                <button class="btn btn-info mg-r-5">Update</button>
+                <button class="btn btn-info mg-r-5">Update Profile</button>
               </div><!-- form-layout-footer -->
             </div><!-- card -->
           </div><!-- col-6 -->
