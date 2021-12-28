@@ -20,7 +20,7 @@
                 <img class="card-img-top img-fluid" src="{{(!empty($user->image))? url('dashboard/img/profile_img/'.$user->image):url('dashboard/img/img12.jpg')}}" alt="{{ $user->name }}" style="width: 15%; height: 15%;">
               </div>
               <div class="row mg-t-20">
-              <h5 class="card-body-title col-sm-4">Fullname: </h6>
+              <h5 class="card-body-title col-sm-4">Full Name: </h6>
                 <div class="col-sm-8 mg-t-10 mg-sm-t-0">
                     <p class="form-control">{{ $user->name }} </p>
                 </div>
@@ -32,13 +32,13 @@
                 </div>
               </div><!-- row -->
               <div class="row mg-t-20">
-              <h5 class="card-body-title col-sm-4">Email: </h6>
+              <h5 class="card-body-title col-sm-4">Email Address: </h6>
                 <div class="col-sm-8 mg-t-10 mg-sm-t-0">
                     <p class="form-control">{{ $user->email }} </p>
                 </div>
               </div><!-- row -->
               <div class="row mg-t-20">
-              <h5 class="card-body-title col-sm-4">Phone No: </h6>
+              <h5 class="card-body-title col-sm-4">Phone Number: </h6>
                 <div class="col-sm-8 mg-t-10 mg-sm-t-0">
                     <p class="form-control">{{ $user->phone }} </p>
                 </div>
