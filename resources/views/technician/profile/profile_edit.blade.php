@@ -12,14 +12,14 @@
       <div class="sl-pagebody">
         <!-- CONTENT -->
 
-        <form method="post" action="{{ route('student.profile.store') }}" enctype="multipart/form-data">
+        <form method="post" action="{{ route('technician.profile.store') }}" enctype="multipart/form-data">
 	 	@csrf
             <div class="card pd-20 pd-sm-40 form-layout form-layout-4">
 
           <!--tab-->
           <div class="pd-10 bg-gray-300 mg-t-20">
 					
-                <h6 class="card-body-title">Student Profile</h6>
+                <h6 class="card-body-title">Technician Profile</h6>
               <div class="mg-b-20 mg-sm-b-30">
                 <img id="showImage" class="card-img-top img-fluid" src="{{(!empty($editData->image))? url('dashboard/img/profile_img/'.$editData->image):url('dashboard/img/img12.jpg')}}" alt="{{ $editData->name }}" style="width: 15%; height: 15%;">
                 <input type="file" name="image" class="form-control" id="image" style="width:15%" >
