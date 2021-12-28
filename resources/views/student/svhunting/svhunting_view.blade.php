@@ -15,10 +15,7 @@
       <!--tab-->
       <div class="pd-10 bg-gray-300 mg-t-20">
 					<!-- Nav tabs -->
-					<ul class="nav nav-pills flex-column flex-md-row" role="tablist">
-						<li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#profile" role="tab" aria-selected="true"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">Profile</span></a> </li>
-						<li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#expertise" role="tab" aria-selected="false"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">Expertise</span></a> </li>
-					</ul>
+					
 					<!-- Tab panes -->
 					<div class="tab-content tabcontent-border">
 						<div class="tab-pane active" id="profile" role="tabpanel">
@@ -30,36 +27,34 @@
               <div class="row mg-t-20">
               <h5 class="card-body-title col-sm-4">Fullname: </h6>
                 <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                    <p class="form-control">{{ $user->name }} </p>
+                    <p>{{ $user->name }} </p>
                 </div>
               </div><!-- row -->
               <div class="row mg-t-20">
               <h5 class="card-body-title col-sm-4">Staff ID: </h6>
                 <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                    <p class="form-control">{{ $user->userID }} </p>
+                    <p>{{ $user->userID }} </p>
                 </div>
               </div><!-- row -->
               <div class="row mg-t-20">
               <h5 class="card-body-title col-sm-4">Email: </h6>
                 <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                    <p class="form-control">{{ $user->email }} </p>
+                    <p>{{ $user->email }} </p>
                 </div>
               </div><!-- row -->
               <div class="row mg-t-20">
               <h5 class="card-body-title col-sm-4">Phone No: </h6>
                 <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                    <p class="form-control">{{ $user->phone }} </p>
+                    <p>{{ $user->phone }} </p>
                 </div>
               </div><!-- row -->
+              <div class="row mg-t-20">
+              <h5 class="card-body-title col-sm-4">Subject Expertise: </h6>
+                <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+                    <p>{{ $user->phone }} </p>
             </div>
 						</div>
-						<div class="tab-pane" id="expertise" role="tabpanel">
-							<div class="p-15">
-								<h4>Fusce porta eros a nisl varius, non molestie metus mollis. Pellentesque tincidunt ante sit amet ornare lacinia.</h4>
-								<h3>Donec vitae laoreet neque, id convallis ante.</h3>
-								<p>Duis cursus eros lorem, pretium ornare purus tincidunt eleifend. Etiam quis justo vitae erat faucibus pharetra. Morbi in ullamcorper diam. Morbi lacinia, sem vitae dignissim cursus, massa nibh semper magna, nec pellentesque lorem nisl quis ex.</p>
-							</div>
-						</div>
+					
 					</div>
 				</div>
 
@@ -70,7 +65,7 @@
             
              
               <div class="form-layout-footer mg-t-30">
-                <button class="btn btn-info mg-r-5"><a href="{{route('lecturer.profile.edit')}}">Edit Profile</button>
+                <button class="btn btn-info mg-r-5"><a href="{{route('lecturer.profile.edit')}}">REQUEST</button>
               </div><!-- form-layout-footer -->
             </div><!-- card -->
           </div><!-- col-6 -->
