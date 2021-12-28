@@ -69,6 +69,46 @@ class HomeController extends Controller
 
     //End Lect Profile
 
+
+    //Technician Profile
+    public function TechProfileView(){
+        $id = Auth::user()->id;
+        $user = User::find($id);
+        return view('technician.profile.profile_view',compact('user'));
+    }
+
+    public function TechProfileEdit(){
+        $id = Auth::user()->id;
+        $editData = User::find($id);
+        return view('technician.profile.profile_edit',compact('editData'));
+    }
+
+    public function TechProfileStore(Request $request){
+        $data = User::find(Auth::user()->id);
+        $data->name = $request->name;
+        $data->email = $request->email;
+        $data->phone = $request->phone;
+        $data->userID = $request->userID;
+
+        if ($request->file('image')){
+            $file = $request->file('image');
+            @unlink(public_path('dashboard/img/profile_img/'.$data->image));
+            $filename = date('YmdHi').$file->getClientOriginalName();
+            $file->move(public_path('dashboard/img/profile_img'),$filename);
+            $data['image'] = $filename;
+        }
+        $data->save();
+
+        $notification = array(
+            'message' => 'Profile Updated Successfully',
+            'alert-type' => 'info'
+        );
+
+        return redirect()->route('technician.profile.view')->with($notification);
+    }//End Method
+
+    //End Tech Profile
+
  //Student Profile
  public function StudProfileView(){
     $id = Auth::user()->id;
