@@ -48,6 +48,7 @@
                     <input class="form-control" type="text" name="phone" value="{{ $editData->phone }}" required="" >
                 </div>
               </div><!-- row -->
+              
               </div>
 
               <div class="form-layout-footer mg-t-30">

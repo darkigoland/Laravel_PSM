@@ -128,6 +128,7 @@ public function StudProfileStore(Request $request){
     $data->email = $request->email;
     $data->phone = $request->phone;
     $data->userID = $request->userID;
+    $data->course = $request->course;
 
     if ($request->file('image')){
         $file = $request->file('image');
