@@ -40,9 +40,17 @@ Route::get('student/profile/edit', [HomeController::class, 'StudProfileEdit'])->
 
 Route::post('student/profile/store', [HomeController::class, 'StudProfileStore'])->name('student.profile.store');
 
+//Profile Technician
+Route::get('technician/profile/view', [HomeController::class, 'TechProfileView'])->name('technician.profile.view');
+
+Route::get('technician/profile/edit', [HomeController::class, 'TechProfileEdit'])->name('technician.profile.edit');
+
+Route::post('technician/profile/store', [HomeController::class, 'TechProfileStore'])->name('technician.profile.store');
+
 //SVhunting
 Route::get('svhunting/list', [HomeController::class, 'SvhuntingList'])->name('svhunting.list');
-Route::get('svhunting/view', [HomeController::class, 'SvhuntingView'])->name('svhunting.view');
+Route::get('svhunting/view{lect}', [HomeController::class, 'SvhuntingView'])->name('svhunting.view');
+Route::get('svhunting/form{lect}', [HomeController::class, 'SvhuntingForm'])->name('svhunting.form');
 
 //ManageApprovalandReport
 Route::get('/submitfile',[SubmitController::class,'submitForm']);

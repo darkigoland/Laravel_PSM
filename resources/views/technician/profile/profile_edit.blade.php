@@ -1,5 +1,5 @@
-@extends('student.stud_master')
-@section('student')
+@extends('technician.tech_master')
+@section('technician')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
@@ -12,14 +12,14 @@
       <div class="sl-pagebody">
         <!-- CONTENT -->
 
-        <form method="post" action="{{ route('student.profile.store') }}" enctype="multipart/form-data">
+        <form method="post" action="{{ route('technician.profile.store') }}" enctype="multipart/form-data">
 	 	@csrf
             <div class="card pd-20 pd-sm-40 form-layout form-layout-4">
 
           <!--tab-->
           <div class="pd-10 bg-gray-300 mg-t-20">
 					
-                <h6 class="card-body-title">Student Profile</h6>
+                <h6 class="card-body-title">Technician Profile</h6>
               <div class="mg-b-20 mg-sm-b-30">
                 <img id="showImage" class="card-img-top img-fluid" src="{{(!empty($editData->image))? url('dashboard/img/profile_img/'.$editData->image):url('dashboard/img/img12.jpg')}}" alt="{{ $editData->name }}" style="width: 15%; height: 15%;">
                 <input type="file" name="image" class="form-control" id="image" style="width:15%" >
@@ -31,7 +31,7 @@
                 </div>
               </div><!-- row -->
               <div class="row mg-t-20">
-              <h5 class="card-body-title col-sm-4">Matric ID: </h6>
+              <h5 class="card-body-title col-sm-4">Staff ID: </h6>
                 <div class="col-sm-8 mg-t-10 mg-sm-t-0">
                     <input class="form-control" type="text" name="userID" value="{{ $editData->userID }}" required="" >
                 </div>
@@ -48,27 +48,8 @@
                     <input class="form-control" type="text" name="phone" value="{{ $editData->phone }}" required="" >
                 </div>
               </div><!-- row -->
-
-              <div class="row mg-t-20">
-              <h5 class="card-body-title col-sm-4">Course: </h6>
-                <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                    <input class="form-control" type="text" name="course" value="{{ $editData->course }}" required="" >
-                </div>
-              </div><!-- row -->
               
-              <div class="row mg-t-20">
-              <h5 class="card-body-title col-sm-4">Project Title Name: </h6>
-                <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                    <input class="form-control" type="text" name="projName" value="{{ $editData->projName }}" required="" >
-                </div>
-              </div><!-- row -->
-
-              <div class="row mg-t-20">
-              <h5 class="card-body-title col-sm-4">Project Description: </h6>
-                <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                    <input class="form-control" type="text" name="projDesc" value="{{ $editData->projDesc }}" required="" >
-                </div>
-              </div><!-- row -->
+              </div>
 
               <div class="form-layout-footer mg-t-30">
                 <button class="btn btn-info mg-r-5">Update Profile</button>

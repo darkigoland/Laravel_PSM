@@ -22,36 +22,36 @@
 							<div class="p-15">
               <h6 class="card-body-title">Lecturer Profile</h6>
               <div class="mg-b-20 mg-sm-b-30">
-                <img class="card-img-top img-fluid" src="{{(!empty($user->image))? url('dashboard/img/profile_img/'.$user->image):url('dashboard/img/img12.jpg')}}" alt="{{ $user->name }}" style="width: 15%; height: 15%;">
+                <img class="card-img-top img-fluid" src="{{(!empty($sv->image))? url('dashboard/img/profile_img/'.$sv->image):url('dashboard/img/img12.jpg')}}" alt="{{ $sv->name }}" style="width: 15%; height: 15%;">
               </div>
               <div class="row mg-t-20">
               <h5 class="card-body-title col-sm-4">Fullname: </h6>
                 <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                    <p>{{ $user->name }} </p>
+                    <p>{{ $sv->name }} </p>
                 </div>
               </div><!-- row -->
               <div class="row mg-t-20">
               <h5 class="card-body-title col-sm-4">Staff ID: </h6>
                 <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                    <p>{{ $user->userID }} </p>
+                    <p>{{ $sv->userID }} </p>
                 </div>
               </div><!-- row -->
               <div class="row mg-t-20">
               <h5 class="card-body-title col-sm-4">Email: </h6>
                 <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                    <p>{{ $user->email }} </p>
+                    <p>{{ $sv->email }} </p>
                 </div>
               </div><!-- row -->
               <div class="row mg-t-20">
               <h5 class="card-body-title col-sm-4">Phone No: </h6>
                 <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                    <p>{{ $user->phone }} </p>
+                    <p>{{ $sv->phone }} </p>
                 </div>
               </div><!-- row -->
               <div class="row mg-t-20">
               <h5 class="card-body-title col-sm-4">Subject Expertise: </h6>
                 <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                    <p>{{ $user->phone }} </p>
+                    <p>{{ $sv->phone }} </p>
             </div>
 						</div>
 					

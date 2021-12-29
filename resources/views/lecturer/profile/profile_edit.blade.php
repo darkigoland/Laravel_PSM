@@ -35,7 +35,7 @@
                 <input type="file" name="image" class="form-control" id="image" style="width:15%" >
               </div>
               <div class="row mg-t-20">
-              <h5 class="card-body-title col-sm-4">Fullname: </h6>
+              <h5 class="card-body-title col-sm-4">Full Name: </h6>
                 <div class="col-sm-8 mg-t-10 mg-sm-t-0">
                     <input class="form-control" type="text" name="name" value="{{ $editData->name }}" required="" >
                 </div>
@@ -47,15 +47,22 @@
                 </div>
               </div><!-- row -->
               <div class="row mg-t-20">
-              <h5 class="card-body-title col-sm-4">Email: </h6>
+              <h5 class="card-body-title col-sm-4">Email Address: </h6>
                 <div class="col-sm-8 mg-t-10 mg-sm-t-0">
                     <input class="form-control" type="email" name="email" value="{{ $editData->email }}" required="" >
                 </div>
               </div><!-- row -->
               <div class="row mg-t-20">
-              <h5 class="card-body-title col-sm-4">Phone No: </h6>
+              <h5 class="card-body-title col-sm-4">Phone Number: </h6>
                 <div class="col-sm-8 mg-t-10 mg-sm-t-0">
                     <input class="form-control" type="text" name="phone" value="{{ $editData->phone }}" required="" >
+                </div>
+              </div><!-- row -->
+
+              <div class="row mg-t-20">
+              <h5 class="card-body-title col-sm-4">Expertise: </h6>
+                <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+                    <input class="form-control" type="text" name="course" value="{{ $editData->course }}" required="" >
                 </div>
               </div><!-- row -->
               </div>
@@ -71,7 +78,7 @@
 				</div>
 
               <div class="form-layout-footer mg-t-30">
-                <button class="btn btn-info mg-r-5">Update</button>
+                <button class="btn btn-info mg-r-5">Update Profile</button>
               </div><!-- form-layout-footer -->
             </div><!-- card -->
           </div><!-- col-6 -->

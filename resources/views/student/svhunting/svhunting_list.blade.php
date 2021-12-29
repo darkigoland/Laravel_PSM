@@ -25,8 +25,8 @@
   </tr>
 @foreach ($lects as $p)
 <tr>
-<td><a href="{{route('svhunting.view')}}">{{ $p->name }}</a></td>
-<td><a href="http://www.google.com/"><button class="button button1">REQUEST</button></a></td>
+<td><a href="{{route('svhunting.view',['lect' => $p->id])}}">{{ $p->name }}</a></td>
+<td><a href="{{route('svhunting.form',['lect' => $p->id])}}"><button class="button button1">REQUEST</button></a></td>
 
 </tr>
 @endforeach
