@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 //use Auth
-
+use DB;
 class HomeController extends Controller
 {
     public function index(){
@@ -167,8 +167,7 @@ public function SvhuntingView($lect){
 }
 
 public function SvhuntingForm($lect){
-    $id = Auth::user()->id;
-    $user = User::find($id);
+    
     $sv= User::findOrFail($lect);
 
     return view('student.svhunting.svhunting_form',compact('sv'));
@@ -176,6 +175,29 @@ public function SvhuntingForm($lect){
    
 }
 
+public function SvhuntingUpload($lect){
+
+    $sv= User::findOrFail($lect);
+    return view('student.svhunting.svhunting_form',compact('sv'));
+   
+}
+public function SvhuntingUploadPost(Request $request,$lect){
+    $id = Auth::user()->id;
+    $user = User::find($id);
+    $sv= User::findOrFail($lect);
+    $status= 'PENDING';
+    $request->validate([
+        'file' => 'required|mimes:pdf,xlx,csv|max:2048',
+    ]);
+    $fileName = time().'.'.$request->file->extension(); 
+
+    $data=array('student'=>$user->id,"lecterur"=>$sv->id,"file"=>$fileName,"status"=>$status);
+    DB::table('proposal')->insert($data);
+
+    echo "Record inserted successfully.<br/>";
+
+    return view('student.svhunting.svhunting_list',compact('user'));
+}
 
 
 }

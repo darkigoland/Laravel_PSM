@@ -58,4 +58,11 @@ class User extends Authenticatable
     protected $appends = [
         'image',
     ];
+
+    public function getImageAttribute()
+    {
+        return $this->profile_image;
+    }
+
 }
+

@@ -51,6 +51,8 @@ Route::post('technician/profile/store', [HomeController::class, 'TechProfileStor
 Route::get('svhunting/list', [HomeController::class, 'SvhuntingList'])->name('svhunting.list');
 Route::get('svhunting/view{lect}', [HomeController::class, 'SvhuntingView'])->name('svhunting.view');
 Route::get('svhunting/form{lect}', [HomeController::class, 'SvhuntingForm'])->name('svhunting.form');
+Route::get('svhunting/upload{lect}', [HomeController::class, 'SvhuntingUpload'])->name('svhunting.upload');
+Route::post('svhunting/upload{lect}', [HomeController::class, 'SvhuntingUploadPost'])->name('svhunting.upload.post');
 
 //ManageApprovalandReport
 Route::get('/submitfile',[SubmitController::class,'submitForm']);
