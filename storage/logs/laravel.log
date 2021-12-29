@@ -8620,6 +8620,7 @@
 #59 {main}
 "} 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [2021-12-28 05:06:28] local.ERROR: syntax error, unexpected token "{" (View: C:\Users\User\Documents\GitHub\Laravel_PSM\resources\views\student\svhunting\svhunting_list.blade.php) {"view":{"view":"C:\\Users\\User\\Documents\\GitHub\\Laravel_PSM\esources\\views/student/svhunting/svhunting_list.blade.php","data":{"errors":"<pre class=sf-dump id=sf-dump-1258570108 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Support\\ViewErrorBag</span> {<a class=sf-dump-ref>#478</a><samp data-depth=1 class=sf-dump-expanded>
   #<span class=sf-dump-protected title=\"Protected property\">bags</span>: []
 </samp>}
@@ -12852,6 +12853,8 @@
 #62 C:\\Users\\User\\Documents\\GitHub\\Laravel_PSM\\server.php(21): require_once('C:\\\\Users\\\\User\\\\D...')
 #63 {main}
 =======
+=======
+>>>>>>> af5a1ad35eb8e09c7664c57a2bca7b8152c410f4
 [2021-12-28 15:23:01] local.ERROR: Route [technnician.profile.view] not defined. (View: C:\Users\HP\Documents\GitHub\Laravel_PSM\resources\views\technician\body\header.blade.php) {"view":{"view":"C:\\Users\\HP\\Documents\\GitHub\\Laravel_PSM\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php","data":[]},"userId":3,"exception":"[object] (Facade\\Ignition\\Exceptions\\ViewException(code: 0): Route [technnician.profile.view] not defined. (View: C:\\Users\\HP\\Documents\\GitHub\\Laravel_PSM\esources\\views\\technician\\body\\header.blade.php) at C:\\Users\\HP\\Documents\\GitHub\\Laravel_PSM\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:444)
 [stacktrace]
 #0 C:\\Users\\HP\\Documents\\GitHub\\Laravel_PSM\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(739): Illuminate\\Routing\\UrlGenerator->route('technnician.pro...', Array, true)
@@ -13187,5 +13190,8 @@
 #78 C:\\Users\\HP\\Documents\\GitHub\\Laravel_PSM\\public\\index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #79 C:\\Users\\HP\\Documents\\GitHub\\Laravel_PSM\\server.php(21): require_once('C:\\\\Users\\\\HP\\\\Doc...')
 #80 {main}
+<<<<<<< HEAD
+>>>>>>> af5a1ad35eb8e09c7664c57a2bca7b8152c410f4
+=======
 >>>>>>> af5a1ad35eb8e09c7664c57a2bca7b8152c410f4
 "} 
