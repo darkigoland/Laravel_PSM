@@ -3,6 +3,22 @@
 
 <link href="{{ URL::asset('css/button.css') }}" rel="stylesheet">
 <link href="{{ URL::asset('css/table.css') }}" rel="stylesheet">
+<link href="{{ URL::asset('css/tab.css') }}" rel="stylesheet">
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
 
 <div class="sl-mainpanel">
     <nav class="breadcrumb sl-breadcrumb">
@@ -12,11 +28,19 @@
 
     <div class="sl-pagebody">
         <div class="card pd-20 pd-sm-40 form-layout form-layout-4">
-        <table>
-  
-  @php
+      
+
+  <div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'London')">LECTURER LIST</button>
+  <button class="tablinks" onclick="openCity(event, 'Paris')">PROPOSAL STATUS</button>
+</div>
+ @php
 	$lects = DB::select('select * from users where role = "lecturer"');
-	@endphp
+  $status = DB::table('proposal')->where('student', '=', $user->id) ->get();
+@endphp
+<div id="London" class="tabcontent">
+  <table>
+ 
 
   <tr>
     <th>Lecterur Name</th>
@@ -31,9 +55,31 @@
 </tr>
 @endforeach
 
+
 </table>
+</div>
+<div id="Paris" class="tabcontent">
+<table>
  
- 
+
+ <tr>
+   <th>Lecterur Name</th>
+   <th>Status</th>
+   <th>ACTION</th>
+   
+ </tr>
+@foreach ($status as $d)
+<tr>
+<td><a href="">{{ $d->lecterur }}</a></td>
+<td><a>{{ $d->status }}</a></td>
+<td><a href=""><button class="button button1">Edit</button></a><a href=""><button class="button button1">Delete</button></a></td>
+
+</tr>
+@endforeach
+
+
+</table>
+</div>
     </div>
 </div>
 @endsection
