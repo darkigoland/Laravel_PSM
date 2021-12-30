@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ManageInventoryController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -59,3 +61,9 @@ Route::get('svhunting/list{lect}', [HomeController::class, 'SvhuntingDelete'])->
 Route::get('/submitfile',[SubmitController::class,'submitForm']);
 
 Route::post('/submitfile',[SubmitController::class,'submitFile'])->name('submit.submitfile');
+
+//ManageInventoryUsage
+Route::get('/std_Inventory_Home', [ManageInventoryController::class, 'std_InventoryHome'])->name('std_Inventory_Home');
+Route::get('/std_Make_Request', [ManageInventoryController::class, 'std_MakeRequest'])->name('std_Make_Request');
+Route::get('/std_Status_Request', [ManageInventoryController::class, 'std_StatusRequest'])->name('std_Status_Request');
+Route::post('make_Request', [ManageInventoryController::class, 'make_Request']);
