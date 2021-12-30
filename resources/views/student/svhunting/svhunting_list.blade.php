@@ -72,7 +72,8 @@ function openCity(evt, cityName) {
 <tr>
 <td><a href="">{{ $d->lecterur }}</a></td>
 <td><a>{{ $d->status }}</a></td>
-<td><a href=""><button class="button button1">Edit</button></a><a href=""><button class="button button1">Delete</button></a></td>
+<td><a href=""><button class="button button1">Edit</button></a>
+<a href=""><button class="button button1">Delete</button></a></td>
 
 </tr>
 @endforeach
