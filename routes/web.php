@@ -53,6 +53,7 @@ Route::get('svhunting/view{lect}', [HomeController::class, 'SvhuntingView'])->na
 Route::get('svhunting/form{lect}', [HomeController::class, 'SvhuntingForm'])->name('svhunting.form');
 Route::get('svhunting/upload{lect}', [HomeController::class, 'SvhuntingUpload'])->name('svhunting.upload');
 Route::post('svhunting/upload{lect}', [HomeController::class, 'SvhuntingUploadPost'])->name('svhunting.upload.post');
+Route::get('svhunting/list{lect}', [HomeController::class, 'SvhuntingDelete'])->name('svhunting.delete');
 
 //ManageApprovalandReport
 Route::get('/submitfile',[SubmitController::class,'submitForm']);

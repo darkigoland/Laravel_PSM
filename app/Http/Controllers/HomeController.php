@@ -199,5 +199,16 @@ public function SvhuntingUploadPost(Request $request,$lect){
     return view('student.svhunting.svhunting_list',compact('user'));
 }
 
+public function SvhuntingDelete($lect){
+
+    $id = Auth::user()->id;
+    $user = User::find($id);
+    $sv= User::findOrFail($lect);
+    $data= DB::table('proposal')->where('student',$user->id)->where('lecterur',$sv->id)->delete();
+
+    return view('student.svhunting.svhunting_list',compact('user'));
+   
+}
+
 
 }
