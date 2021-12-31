@@ -210,5 +210,36 @@ public function SvhuntingDelete($lect){
    
 }
 
+public function SvhuntingUpdate($lect){
+    
+    $sv= User::findOrFail($lect);
+
+    return view('student.svhunting.svhunting_update',compact('sv'));
+}
+
+public function SvhuntingEdit($lect){
+
+    $sv= User::findOrFail($lect);
+    return view('student.svhunting.svhunting_update',compact('sv'));
+   
+}
+public function SvhuntingEditPost(Request $request,$lect){
+    $id = Auth::user()->id;
+    $user = User::find($id);
+    $sv= User::findOrFail($lect);
+    $request->validate([
+        'file' => 'required|mimes:pdf,xlx,csv|max:2048',
+    ]);
+    $fileName = time().'.'.$request->file->extension(); 
+    DB::update('update proposal set file=? where student = ? and lecterur = ?',
+    [$fileName,$user->id,$sv->id]);
+    
+
+    echo "Record updated successfully.<br/>";
+
+    return view('student.svhunting.svhunting_list',compact('user'));
+}
+
+
 
 }
