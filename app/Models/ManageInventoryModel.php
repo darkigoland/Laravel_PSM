@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class ManageInventoryModel extends Model
 {
     use HasFactory;
+    public $table="Inventory";
+    public $timestamps=false;
 }

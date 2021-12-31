@@ -15,7 +15,7 @@
             <div class="card pd-20 pd-sm-40 form-layout form-layout-4">
                 <div class="bg-white px-16 py-14 rounded-md">
                     <h1 class="text-xl mb-4 font-bold h1-Black">Inventory</h1>
-                    <p>Name:</p>
+                    <p>Name:{{ Auth::user()->name }}</p>
                     <p>Supervisor:</p>
                     <p>Project Title:</p>
 
@@ -47,6 +47,8 @@
                                     </tr>
                                     <tr>
                                         <td></td>
+                                        <input type="hidden"  name="stdname" value=" {{ Auth::user()->name }}">
+                                        
                                         <td></td>
                                         <td>
                                             <button type="submit" class="inline-flex bg-indigo-600 text-white rounded-full h-6 px-3 justify-center items-center">Request</button>

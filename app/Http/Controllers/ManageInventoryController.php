@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\ManageInventoryModel;
+use Illuminate\Support\Facades\DB;
 
 class ManageInventoryController extends Controller
 {
@@ -28,6 +30,24 @@ class ManageInventoryController extends Controller
 
     public function make_Request(Request $request){
 
-        return $request->input(); 
+        // $query = DB::table('Inventory')->insert([
+        //     'item_Name'=>$request->input('name'),
+        //     'item_Description'=>$request->input('description'),
+        //     'quantity'=>$request->input('quantity')
+        // ]);
+
+        $inventory = new ManageInventoryModel;
+
+        $inventory->stud_Name=$request->stdname;
+
+        $inventory->item_Name=$request->name;
+        $inventory->item_Description=$request->description;
+        $inventory->quantity=$request->quantity;
+        $inventory->save();
+        return redirect('std_Inventory_Home');
+
+        
     }
+
+   
 }
