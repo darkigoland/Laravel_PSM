@@ -13,6 +13,9 @@
  <div class="card pd-20 pd-sm-40 form-layout form-layout-4">
    
       <!--tab-->
+      @php
+			$user = DB::table('users')->where('id',Auth::user()->id)->first();
+		  @endphp
       <div class="pd-10 bg-gray-300 mg-t-20">
 					
               <h6 class="card-body-title">Technician Profile</h6>

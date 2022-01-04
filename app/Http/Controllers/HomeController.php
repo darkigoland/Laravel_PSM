@@ -48,8 +48,8 @@ class HomeController extends Controller
         $data->name = $request->name;
         $data->email = $request->email;
         $data->phone = $request->phone;
-        $data->userID = $request->userID;
-        $data->course = $request->course;
+        $data->staffID = $request->staffID;
+       // $data->course = $request->course;
 
         if ($request->file('image')){
             $file = $request->file('image');

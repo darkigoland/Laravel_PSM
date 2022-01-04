@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ExpertiseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,12 +34,24 @@ Route::get('lecturer/profile/edit', [HomeController::class, 'LectProfileEdit'])-
 
 Route::post('lecturer/profile/store', [HomeController::class, 'LectProfileStore'])->name('lecturer.profile.store');
 
+//Lecturer Expertise
+Route::prefix('expertise')->group(function(){
+
+    //teaching
+Route::get('lecturer/teaching/view', [ExpertiseController::class, 'LectTeachingView'])->name('lecturer.teaching.view');
+
+Route::get('lecturer/teaching/add', [ExpertiseController::class, 'LectTeachingAdd'])->name('lecturer.teaching.add');
+
+Route::post('lecturer/teaching/store', [ExpertiseController::class, 'LectTeachingStore'])->name('lecturer.teaching.store');
+
 //Profile Student
 Route::get('student/profile/view', [HomeController::class, 'StudProfileView'])->name('student.profile.view');
 
 Route::get('student/profile/edit', [HomeController::class, 'StudProfileEdit'])->name('student.profile.edit');
 
 Route::post('student/profile/store', [HomeController::class, 'StudProfileStore'])->name('student.profile.store');
+});
+
 
 //Profile Technician
 Route::get('technician/profile/view', [HomeController::class, 'TechProfileView'])->name('technician.profile.view');

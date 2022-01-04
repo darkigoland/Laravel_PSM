@@ -13,16 +13,11 @@
  <div class="card pd-20 pd-sm-40 form-layout form-layout-4">
    
       <!--tab-->
+      @php
+			$user = DB::table('users')->where('id',Auth::user()->id)->first();
+		  @endphp
       <div class="pd-10 bg-gray-300 mg-t-20">
-					<!-- Nav tabs -->
-					<ul class="nav nav-pills flex-column flex-md-row" role="tablist">
-						<li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#profile" role="tab" aria-selected="true"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">Profile</span></a> </li>
-						<li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#expertise" role="tab" aria-selected="false"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">Expertise</span></a> </li>
-					</ul>
-					<!-- Tab panes -->
-					<div class="tab-content tabcontent-border">
-						<div class="tab-pane active" id="profile" role="tabpanel">
-							<div class="p-15">
+					
               <h6 class="card-body-title">Lecturer Profile</h6>
               <div class="mg-b-20 mg-sm-b-30">
                 <img class="card-img-top img-fluid" src="{{(!empty($user->image))? url('dashboard/img/profile_img/'.$user->image):url('dashboard/img/img12.jpg')}}" alt="{{ $user->name }}" style="width: 15%; height: 15%;">
@@ -36,7 +31,7 @@
               <div class="row mg-t-20">
               <h5 class="card-body-title col-sm-4">Staff ID: </h6>
                 <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                    <p class="form-control">{{ $user->userID }} </p>
+                    <p class="form-control">{{ $user->staffID }} </p>
                 </div>
               </div><!-- row -->
               <div class="row mg-t-20">
@@ -51,26 +46,9 @@
                     <p class="form-control">{{ $user->phone }} </p>
                 </div>
               </div><!-- row -->
-              <div class="row mg-t-20">
-              <h5 class="card-body-title col-sm-4">Expertise: </h6>
-                <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                    <p class="form-control">{{ $user->course }} </p>
-                </div>
-              </div><!-- row -->
+
             </div>
-						</div>
-						<div class="tab-pane" id="expertise" role="tabpanel">
-							<div class="p-15">
-								<h4>Fusce porta eros a nisl varius, non molestie metus mollis. Pellentesque tincidunt ante sit amet ornare lacinia.</h4>
-								<h3>Donec vitae laoreet neque, id convallis ante.</h3>
-								<p>Duis cursus eros lorem, pretium ornare purus tincidunt eleifend. Etiam quis justo vitae erat faucibus pharetra. Morbi in ullamcorper diam. Morbi lacinia, sem vitae dignissim cursus, massa nibh semper magna, nec pellentesque lorem nisl quis ex.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-
-      <!--end tab-->
-
+					
        
 
             

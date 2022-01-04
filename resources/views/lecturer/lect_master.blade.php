@@ -35,6 +35,7 @@
     <link href="{{asset('dashboard/lib/Ionicons/css/ionicons.css')}}" rel="stylesheet">
     <link href="{{asset('dashboard/lib/perfect-scrollbar/css/perfect-scrollbar.css')}}" rel="stylesheet">
     <link href="{{asset('dashboard/lib/rickshaw/rickshaw.min.css')}}" rel="stylesheet">
+    <link href="{{asset('dashboard/lib/datatables/jquery.dataTables.css')}}" rel="stylesheet">
 
     <!-- Starlight CSS -->
     <link rel="stylesheet" href="{{asset('dashboard/css/starlight.css')}}">
@@ -76,6 +77,10 @@
     <script src="{{asset('dashboard/lib/Flot/jquery.flot.resize.js')}}"></script>
     <script src="{{asset('dashboard/lib/flot-spline/jquery.flot.spline.js')}}"></script>
 
+    <script src="{{asset('dashboard/lib/datatables/jquery.dataTables.js')}}"></script>
+    <script src="{{asset('dashboard/lib/datatables-responsive/dataTables.responsive.js')}}"></script>
+    <script src="{{asset('dashboard/lib/select2/js/select2.min.js')}}"></script>
+
     <script src="{{asset('dashboard/js/starlight.js')}}"></script>
     <script src="{{asset('dashboard/js/ResizeSensor.js')}}"></script>
     <script src="{{asset('dashboard/js/dashboard.js')}}"></script>
@@ -104,6 +109,13 @@
     break; 
  }
  @endif 
+
+
+ $('#datatable2').DataTable({
+  bLengthChange: false,
+  searching: false,
+  responsive: true
+});
 </script>
   </body>
 </html>
