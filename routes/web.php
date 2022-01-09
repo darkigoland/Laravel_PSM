@@ -44,6 +44,32 @@ Route::get('lecturer/teaching/add', [ExpertiseController::class, 'LectTeachingAd
 
 Route::post('lecturer/teaching/store', [ExpertiseController::class, 'LectTeachingStore'])->name('lecturer.teaching.store');
 
+Route::get('lecturer/teaching/edit/{id}', [ExpertiseController::class, 'LectTeachingEdit'])->name('lecturer.teaching.edit');
+
+Route::get('lecturer/teaching/delete/{id}', [ExpertiseController::class, 'LectTeachingDelete'])->name('lecturer.teaching.delete');
+
+//research
+Route::get('lecturer/research/view', [ExpertiseController::class, 'LectResearchView'])->name('lecturer.research.view');
+
+Route::get('lecturer/research/add', [ExpertiseController::class, 'LectResearchAdd'])->name('lecturer.research.add');
+
+Route::post('lecturer/research/store', [ExpertiseController::class, 'LectResearchStore'])->name('lecturer.research.store');
+
+Route::get('lecturer/research/edit/{id}', [ExpertiseController::class, 'LectResearchEdit'])->name('lecturer.research.edit');
+
+Route::get('lecturer/research/delete/{id}', [ExpertiseController::class, 'LectResearchDelete'])->name('lecturer.research.delete');
+
+//intellectal
+Route::get('lecturer/intellectual/view', [ExpertiseController::class, 'LectIntView'])->name('lecturer.intellectual.view');
+
+Route::get('lecturer/intellectual/add', [ExpertiseController::class, 'LectIntAdd'])->name('lecturer.intellectual.add');
+
+Route::post('lecturer/intellectual/store', [ExpertiseController::class, 'LectIntStore'])->name('lecturer.intellectual.store');
+
+Route::get('lecturer/intellectual/edit/{id}', [ExpertiseController::class, 'LectIntEdit'])->name('lecturer.intellectual.edit');
+
+Route::get('lecturer/intellectual/delete/{id}', [ExpertiseController::class, 'LectIntDelete'])->name('lecturer.intellectual.delete');
+
 //Profile Student
 Route::get('student/profile/view', [HomeController::class, 'StudProfileView'])->name('student.profile.view');
 

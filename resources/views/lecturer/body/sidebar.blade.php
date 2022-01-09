@@ -47,8 +47,8 @@ $route = Route::current()->Getname();
 
         <ul class="sl-menu-sub nav flex-column" style="display: none;">
           <li class="nav-item"><a href="{{ route('lecturer.teaching.view') }}" class="nav-link active">Teaching</a></li>
-          <li class="nav-item"><a href="form-layouts.html" class="nav-link">Research</a></li>
-          <li class="nav-item"><a href="form-validation.html" class="nav-link">Intellectual Property</a></li>
+          <li class="nav-item"><a href="{{ route('lecturer.research.view') }}" class="nav-link">Research</a></li>
+          <li class="nav-item"><a href="{{ route('lecturer.intellectual.view') }}" class="nav-link">Intellectual Property</a></li>
         </ul>
 
         <a href="widgets.html" class="sl-menu-link">

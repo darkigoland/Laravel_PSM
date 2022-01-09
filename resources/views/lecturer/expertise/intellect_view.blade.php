@@ -12,48 +12,45 @@
  <!-- CONTENT -->
 
  <div class="card pd-20 pd-sm-40 form-layout form-layout-4"><!--start border-->
- <h2>Expertise Information</h2>
+ <h2>Intellectual Property Information</h2>
  <div class="col-sm-6 col-md-1 mg-t-0 mg-md-t-0">
-              <a href="{{route('lecturer.teaching.add')}}" style="float: right" class="btn btn-rounded btn-info mg-r-5"> Add Expertise</a>
+              <a href="{{route('lecturer.intellectual.add')}}" style="float: right;" class="btn btn-rounded btn-info mg-r-5"> Add Intellectual<br> Property</a>
 </div>
 
           <div class="box-body">
 					<!-- Nav tabs -->
 					
 					<!-- Tab panes -->
-
 							<div class="p-15">
-
-                            <div class="table-wrapper" style="padding-top:2%;"><!--start table Research-->
+								
+        <div class="table-wrapper" style="padding-top:2%;"><!--start table Reseerch-->
             <div id="datatable2_wrapper" class="dataTables_wrapper no-footer">
                 <table id="datatable2" class="table display responsive nowrap dataTable no-footer dtr-inline" role="grid" aria-describedby="datatable2_info" style="width: 1531px;">
               <thead>
                 <tr role="row">
                     <th class="wd-15p sorting_asc" style="width:1%" tabindex="0" aria-controls="datatable2" rowspan="1" colspan="1"  aria-label="No: activate to sort column descending" aria-sort="ascending">No</th>
-                    <th class="wd-15p sorting" tabindex="0" aria-controls="datatable2" rowspan="1" colspan="1"  aria-label="Type: activate to sort column ascending">Type</th>
-                    <th class="wd-20p sorting" tabindex="0" aria-controls="datatable2" rowspan="1" colspan="1"  aria-label="Name: activate to sort column ascending">Name</th>
-                    <th class="wd-20p sorting" tabindex="0" aria-controls="datatable2" rowspan="1" colspan="1"  aria-label="Reg. No: activate to sort column ascending">Reg. No</th>
+                    <th class="wd-15p sorting" tabindex="0" aria-controls="datatable2" rowspan="1" colspan="1"  aria-label="Code: activate to sort column ascending">Name</th>
+                    <th class="wd-20p sorting" tabindex="0" aria-controls="datatable2" rowspan="1" colspan="1"  aria-label="Subject: activate to sort column ascending">Action</th>
                 </tr>
               </thead>
               <tbody>
-              @foreach($allData as $key => $expertise )
+              @foreach($allData as $key => $intel )
                   <tr role="row" class="odd">
                   <td tabindex="0" class="sorting_1">{{ $key+1 }}</td>
-                  <td>{{ $expertise['expertise_category']['type'] }}</td>
-                  <td>{{ $expertise['expertise_category']['name'] }}</td>
-                  <td>{{ $expertise['expertise_category']['reg_no'] }}</td>
+                  <td>{{ $intel->name}}</td>
+                  <td><a href="{{ route('lecturer.intellectual.delete',$intel->id) }}" class="btn btn-danger" id="delete">Delete</a></td>
                 </tr>
                 @endforeach
                 <!-- <tr role="row" class="even">
                   <td class="sorting_1" tabindex="0">Angelica</td>
                   <td>Ramos</td>
                   <td>Chief Executive Officer</td>
-                  <td>Satou</td>
                 </tr> -->
             </table>
         </div>
           </div><!--end table-->
-						</div>
+
+                        </div>
 				</div>
 
 
@@ -79,13 +76,3 @@
       </footer>
       <!--end footer-->
 
-
-        
-      </div><!-- sl-pagebody -->
-      
-
-      </div><!-- sl-pagebody -->
-      
-    </div>
-    
-    @endsection

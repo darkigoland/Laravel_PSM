@@ -12,9 +12,9 @@
  <!-- CONTENT -->
 
  <div class="card pd-20 pd-sm-40 form-layout form-layout-4"><!--start border-->
- <h2>Expertise Information</h2>
+ <h2>Teaching Information</h2>
  <div class="col-sm-6 col-md-1 mg-t-0 mg-md-t-0">
-              <a href="{{route('lecturer.teaching.add')}}" style="float: right" class="btn btn-rounded btn-info mg-r-5"> Add Expertise</a>
+              <a href="{{route('lecturer.teaching.add')}}" style="float: right" class="btn btn-rounded btn-info mg-r-5"> Add Teaching</a>
 </div>
 
           <div class="box-body">
@@ -29,16 +29,18 @@
               <thead>
                 <tr role="row">
                     <th class="wd-15p sorting_asc" style="width:1%" tabindex="0" aria-controls="datatable2" rowspan="1" colspan="1"  aria-label="No: activate to sort column descending" aria-sort="ascending">No</th>
+                    <th class="wd-15p sorting" tabindex="0" aria-controls="datatable2" rowspan="1" colspan="1"  aria-label="Code: activate to sort column ascending">Code</th>
                     <th class="wd-15p sorting" tabindex="0" aria-controls="datatable2" rowspan="1" colspan="1"  aria-label="Code: activate to sort column ascending">Subject</th>
                     <th class="wd-20p sorting" tabindex="0" aria-controls="datatable2" rowspan="1" colspan="1"  aria-label="Subject: activate to sort column ascending">Action</th>
                 </tr>
               </thead>
               <tbody>
-              @foreach($allData as $key => $expertise )
+              @foreach($allData as $key => $teach )
                   <tr role="row" class="odd">
                   <td tabindex="0" class="sorting_1">{{ $key+1 }}</td>
-                  <td>{{ $expertise['expertise_category']['Subject'] }}</td>
-                  <td>{{ $expertise['expertise_category']['subject'] }}</td>
+                  <td>{{ $teach->code}}</td>
+                  <td>{{ $teach->subject }}</td>
+                  <td><a href="{{ route('lecturer.teaching.delete',$teach->id) }}" class="btn btn-danger" id="delete">Delete</a></td>
                 </tr>
                 @endforeach
                 <!-- <tr role="row" class="even">
