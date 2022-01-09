@@ -65,7 +65,7 @@
             
              
               <div class="form-layout-footer mg-t-30">
-                <button class="btn btn-info mg-r-5"><a href="{{route('lecturer.profile.edit')}}">REQUEST</button>
+                <button class="btn btn-info mg-r-5"><a href="{{route('svhunting.form',['lect' => $sv->id])}}">REQUEST</button>
               </div><!-- form-layout-footer -->
             </div><!-- card -->
           </div><!-- col-6 -->
