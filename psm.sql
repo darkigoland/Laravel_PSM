@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 19, 2021 at 05:46 AM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 8.0.3
+-- Generation Time: Jan 10, 2022 at 02:42 AM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 8.0.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,6 +24,49 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `expertises`
+--
+
+CREATE TABLE `expertises` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `teach_id` int(11) NOT NULL,
+  `research_id` int(11) NOT NULL,
+  `int_id` int(11) NOT NULL,
+  `lect_id` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `expertise_categories`
+--
+
+CREATE TABLE `expertise_categories` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `category` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `expertise_categories`
+--
+
+INSERT INTO `expertise_categories` (`id`, `category`, `created_at`, `updated_at`) VALUES
+(1, 'Expertise', NULL, NULL),
+(2, 'Supervision', NULL, NULL),
+(3, 'Teaching', NULL, NULL),
+(4, 'Research', NULL, NULL),
+(5, 'Publication', NULL, NULL),
+(6, 'Consultation', NULL, NULL),
+(7, 'Intellectual Property', NULL, NULL),
+(8, 'Commercialization', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `failed_jobs`
 --
 
@@ -36,6 +79,46 @@ CREATE TABLE `failed_jobs` (
   `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `intellectuals`
+--
+
+CREATE TABLE `intellectuals` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `intellectuals`
+--
+
+INSERT INTO `intellectuals` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(1, 'Ump Massive Open Learning Course (Mooc) : Os For Novice', '2022-01-09 10:33:34', '2022-01-09 10:33:34'),
+(2, 'Futuristic Augmented Reality Furniture', '2022-01-09 10:33:34', '2022-01-09 10:33:34');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `logbook`
+--
+
+CREATE TABLE `logbook` (
+  `stud_id` varchar(10) NOT NULL,
+  `stud_name` varchar(100) NOT NULL,
+  `title` varchar(100) NOT NULL,
+  `meet_date` date NOT NULL,
+  `start_time` time NOT NULL,
+  `end_time` time NOT NULL,
+  `progress ` longtext NOT NULL,
+  `detail ` longtext NOT NULL,
+  `plan` longtext NOT NULL,
+  `status` longtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -59,7 +142,12 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (3, '2014_10_12_200000_add_two_factor_columns_to_users_table', 1),
 (4, '2019_08_19_000000_create_failed_jobs_table', 1),
 (5, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(6, '2021_12_18_003826_create_sessions_table', 1);
+(6, '2021_12_18_003826_create_sessions_table', 1),
+(7, '2022_01_01_115509_create_expertise_categories_table', 2),
+(8, '2022_01_01_120629_create_expertises_table', 3),
+(9, '2022_01_09_120221_create_teachings_table', 4),
+(10, '2022_01_09_120313_create_research_table', 4),
+(11, '2022_01_09_120341_create_intellectuals_table', 4);
 
 -- --------------------------------------------------------
 
@@ -94,6 +182,48 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `proposal`
+--
+
+CREATE TABLE `proposal` (
+  `student` int(11) NOT NULL,
+  `lecterur` int(11) NOT NULL,
+  `file` blob NOT NULL,
+  `status` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `proposal`
+--
+
+INSERT INTO `proposal` (`student`, `lecterur`, `file`, `status`) VALUES
+(2, 1, 0x313634303738393634382e706466, 'PENDING');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `research`
+--
+
+CREATE TABLE `research` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `role` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `research`
+--
+
+INSERT INTO `research` (`id`, `title`, `role`, `created_at`, `updated_at`) VALUES
+(3, 'Security Analytic Framework For Security Information And Event Management (Siem)', 'Member', '2022-01-09 10:06:59', '2022-01-09 10:06:59'),
+(4, 'Formulation Of Itil Devops Framework For Software Agile Operation', 'Leader', '2022-01-09 10:06:59', '2022-01-09 10:06:59');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `sessions`
 --
 
@@ -111,7 +241,29 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('NWlnenevD6zV4FnOsSXojaORqx5s9JMniLbPPknt', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36', 'YTo2OntzOjM6InVybCI7YTowOnt9czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzQ6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wcm9maWxlL2VkaXQiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjY6Il90b2tlbiI7czo0MDoiRzNVbGU0TzJ3bnl5M2tWc3JLWTlFZzhTcWpyTU92WXk0TFBEMTV5byI7czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTtzOjE3OiJwYXNzd29yZF9oYXNoX3dlYiI7czo2MDoiJDJ5JDEwJFZhejZnU0JzaVJlQVkwanVCTzdORXVkUzBlN3hNdnpxaDZhNUdCSy9URzdhcTJhNlVmQlBLIjt9', 1639852754);
+('nxhmBZC26NIW7RPOgQC5adL8p7gM0ozLbuhEOM1N', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiY01EU0pMQnBpRVMwOTJ1eENsSk50QXNKNjRDeHgyWk1MUGZidFlTSiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NTg6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9leHBlcnRpc2UvbGVjdHVyZXIvaW50ZWxsZWN0dWFsL3ZpZXciO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO3M6MTc6InBhc3N3b3JkX2hhc2hfd2ViIjtzOjYwOiIkMnkkMTAkVmF6NmdTQnNpUmVBWTBqdUJPN05FdWRTMGU3eE12enFoNmE1R0JLL1RHN2FxMmE2VWZCUEsiO30=', 1641753273);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `teachings`
+--
+
+CREATE TABLE `teachings` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `code` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `subject` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `teachings`
+--
+
+INSERT INTO `teachings` (`id`, `code`, `subject`, `created_at`, `updated_at`) VALUES
+(1, 'BCS1033', 'SOFTWARE ENGINEERING', '2022-01-09 08:36:53', '2022-01-09 08:36:53'),
+(2, 'BCS1133', 'SYSTEMS ANALYSIS & DESIGN', '2022-01-09 08:36:53', '2022-01-09 08:36:53');
 
 -- --------------------------------------------------------
 
@@ -142,7 +294,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `staffID`, `phone`, `role`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `remember_token`, `current_team_id`, `image`, `created_at`, `updated_at`) VALUES
-(1, 'Lecturer', 'lect@gmail.com', NULL, NULL, 'lecturer', NULL, '$2y$10$Vaz6gSBsiReAY0juBO7NEudS0e7xMvzqh6a5GBK/TG7aq2a6UfBPK', NULL, NULL, NULL, NULL, NULL, '2021-12-17 16:58:06', '2021-12-17 16:58:06'),
+(1, 'Lecturer', 'lect@gmail.com', 'AA1457', '01245781', 'lecturer', NULL, '$2y$10$Vaz6gSBsiReAY0juBO7NEudS0e7xMvzqh6a5GBK/TG7aq2a6UfBPK', NULL, NULL, NULL, NULL, '202201010732LOGO-MALAYSIA-PRIHATIN.png', '2021-12-17 16:58:06', '2021-12-31 23:32:03'),
 (2, 'Student', 'stud@gmail.com', NULL, NULL, 'student', NULL, '$2y$10$gKcQrw/32ctHU6z/hShncuS8aeXYOPIu3L3LWKksdD1j8cQuVFLQK', NULL, NULL, NULL, NULL, NULL, '2021-12-17 16:58:27', '2021-12-17 16:58:27'),
 (3, 'Technician', 'tech@gmail.com', NULL, NULL, 'technician', NULL, '$2y$10$OxWDzGOCPZNy0M0RgQHvyuWHZ7rMyDCpzylGEkBV3jOrmtqmn7LpO', NULL, NULL, NULL, NULL, NULL, '2021-12-17 16:58:47', '2021-12-17 16:58:47');
 
@@ -151,11 +303,37 @@ INSERT INTO `users` (`id`, `name`, `email`, `staffID`, `phone`, `role`, `email_v
 --
 
 --
+-- Indexes for table `expertises`
+--
+ALTER TABLE `expertises`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `expertise_categories`
+--
+ALTER TABLE `expertise_categories`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `expertise_categories_category_unique` (`category`);
+
+--
 -- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
+
+--
+-- Indexes for table `intellectuals`
+--
+ALTER TABLE `intellectuals`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `intellectuals_name_unique` (`name`);
+
+--
+-- Indexes for table `logbook`
+--
+ALTER TABLE `logbook`
+  ADD PRIMARY KEY (`stud_id`);
 
 --
 -- Indexes for table `migrations`
@@ -178,12 +356,26 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
+-- Indexes for table `research`
+--
+ALTER TABLE `research`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `research_title_unique` (`title`);
+
+--
 -- Indexes for table `sessions`
 --
 ALTER TABLE `sessions`
   ADD PRIMARY KEY (`id`),
   ADD KEY `sessions_user_id_index` (`user_id`),
   ADD KEY `sessions_last_activity_index` (`last_activity`);
+
+--
+-- Indexes for table `teachings`
+--
+ALTER TABLE `teachings`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `teachings_code_unique` (`code`);
 
 --
 -- Indexes for table `users`
@@ -197,22 +389,52 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `expertises`
+--
+ALTER TABLE `expertises`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `expertise_categories`
+--
+ALTER TABLE `expertise_categories`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `intellectuals`
+--
+ALTER TABLE `intellectuals`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `research`
+--
+ALTER TABLE `research`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `teachings`
+--
+ALTER TABLE `teachings`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
