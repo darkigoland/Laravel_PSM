@@ -102,4 +102,4 @@ Route::get('/submit',[App\Http\Controllers\SubmitController::class,'submitForm']
 
 Route::post('/submit',[App\Http\Controllers\SubmitController::class,'submitFile'])->name('submit.submitfile');
   
-Route::resource('approval', App\Http\Controllers\ApprovalController::class);
+Route::resource('approval',ApprovalController::class);

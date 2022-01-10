@@ -1,6 +1,5 @@
-@extends('products.layout')
- 
-@section('content')
+<!DOCTYPE html>
+<html lang="en">
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
@@ -41,4 +40,4 @@
     </table>
   
     {!! $approval->links() !!}
-    @endsection 
+    </html>

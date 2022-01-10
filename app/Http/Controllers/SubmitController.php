@@ -11,7 +11,7 @@ class SubmitController extends Controller
 {
    public function submitForm()
    {
-     return view('submit');
+     return view('approval');
    }
 
    public function submitFile(Request $request)
