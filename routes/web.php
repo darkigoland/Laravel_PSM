@@ -98,8 +98,8 @@ Route::get('svhunting/edit{lect}', [HomeController::class, 'SvhuntingEdit'])->na
 Route::post('svhunting/Edit{lect}', [HomeController::class, 'SvhuntingEditPost'])->name('svhunting.edit.post');
 
 //ManageApprovalandReport
-Route::get('/submitfile',[SubmitController::class,'submitForm']);
+Route::get('/submit',[App\Http\Controllers\SubmitController::class,'submitForm']);
 
-Route::post('/submitfile',[SubmitController::class,'submitFile'])->name('submit.submitfile');
+Route::post('/submit',[App\Http\Controllers\SubmitController::class,'submitFile'])->name('submit.submitfile');
   
-Route::resource('approval', ApprovalController::class);
+Route::resource('approval', App\Http\Controllers\ApprovalController::class);
