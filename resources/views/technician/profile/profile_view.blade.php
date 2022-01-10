@@ -31,7 +31,7 @@
               <div class="row mg-t-20">
               <h5 class="card-body-title col-sm-4">Staff ID: </h6>
                 <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                    <p class="form-control">{{ $user->userID }} </p>
+                    <p class="form-control">{{ $user->staffID }} </p>
                 </div>
               </div><!-- row -->
               <div class="row mg-t-20">
