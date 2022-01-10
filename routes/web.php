@@ -101,3 +101,5 @@ Route::post('svhunting/Edit{lect}', [HomeController::class, 'SvhuntingEditPost']
 Route::get('/submitfile',[SubmitController::class,'submitForm']);
 
 Route::post('/submitfile',[SubmitController::class,'submitFile'])->name('submit.submitfile');
+  
+Route::resource('approval', ApprovalController::class);

@@ -16,7 +16,7 @@ class SubmitController extends Controller
 
    public function submitFile(Request $request)
    {
-       $request->file->store('public');
+       $request->file->store('approval');
        return "File has been submitted succesfully!";
    }
 
