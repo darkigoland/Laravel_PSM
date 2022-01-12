@@ -15,6 +15,7 @@
       <!--tab-->
       @php
 			$user = DB::table('users')->where('id',Auth::user()->id)->first();
+    
 		  @endphp
       <div class="pd-10 bg-gray-300 mg-t-20">
 					
@@ -31,7 +32,7 @@
               <div class="row mg-t-20">
               <h5 class="card-body-title col-sm-4">Matric ID: </h6>
                 <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                    <p class="form-control">{{ $user->userID }} </p>
+                    <p class="form-control">{{ $user->staffID }} </p>
                 </div>
               </div><!-- row -->
               <div class="row mg-t-20">
@@ -47,26 +48,9 @@
                 </div>
               </div><!-- row -->
 
-              <div class="row mg-t-20">
-              <h5 class="card-body-title col-sm-4">Course: </h6>
-                <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                    <p class="form-control">{{ $user->course }} </p>
-                </div>
-              </div><!-- row -->
+            
 
-              <div class="row mg-t-20">
-              <h5 class="card-body-title col-sm-4">Project Title Name: </h6>
-                <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                    <p class="form-control">{{ $user->projName }} </p>
-                </div>
-              </div><!-- row -->
-
-              <div class="row mg-t-20">
-              <h5 class="card-body-title col-sm-4">Project Description: </h6>
-                <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                    <p class="form-control">{{ $user->projDesc }} </p>
-                </div>
-              </div><!-- row -->
+         
             </div>
 					
        
