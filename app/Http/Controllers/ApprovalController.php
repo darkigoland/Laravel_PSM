@@ -16,7 +16,7 @@ class ApprovalController extends Controller
     {
         $products = Approval::latest()->paginate(5);
     
-        return view('approval.index',compact('approval'))
+        return view('approval.index',compact('approvals'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
      
@@ -29,7 +29,7 @@ class ApprovalController extends Controller
      */
     public function show(Approval $approval)
     {
-        return view('approval.show',compact('approval'));
+        return view('approval.show',compact('approvals'));
     } 
      
     
