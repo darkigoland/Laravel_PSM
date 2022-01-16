@@ -4,6 +4,7 @@
 <link href="{{ URL::asset('css/button.css') }}" rel="stylesheet">
 <link href="{{ URL::asset('css/table.css') }}" rel="stylesheet">
 <link href="{{ URL::asset('css/tab.css') }}" rel="stylesheet">
+<body onload="document.getElementById('defaultOpen').click();">
 <script>
 function openCity(evt, cityName) {
   var i, tabcontent, tablinks;
@@ -19,6 +20,7 @@ function openCity(evt, cityName) {
   evt.currentTarget.className += " active";
   
 }
+document.getElementById("defaultOpen").click();
 </script>
 
 <div class="sl-mainpanel">
@@ -32,7 +34,7 @@ function openCity(evt, cityName) {
       
 
   <div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'London')">LECTURER LIST</button>
+  <button class="tablinks" onclick="openCity(event, 'London')"id="defaultOpen">LECTURER LIST</button>
   <button class="tablinks" onclick="openCity(event, 'Paris')">PROPOSAL STATUS</button>
 </div>
  @php
