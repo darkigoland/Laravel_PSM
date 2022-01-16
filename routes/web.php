@@ -98,6 +98,7 @@ Route::get('svhunting/Update{lect}', [HomeController::class, 'SvhuntingUpdate'])
 Route::get('svhunting/list{lect}', [HomeController::class, 'SvhuntingDelete'])->name('svhunting.delete');
 Route::get('svhunting/edit{lect}', [HomeController::class, 'SvhuntingEdit'])->name('svhunting.edit');
 Route::post('svhunting/Edit{lect}', [HomeController::class, 'SvhuntingEditPost'])->name('svhunting.edit.post');
+Route::get('svhunting/download{lect}', [HomeController::class, 'SvhuntingDownload'])->name('svhunting.download');
 
 //ManageApprovalandReport
 Route::resource('/approval-page', ApprovalController::class);

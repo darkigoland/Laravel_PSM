@@ -76,7 +76,7 @@ document.getElementById("defaultOpen").click();
 <tr>
 <td><a href="">{{ $d->lecterur }}</a></td>
 <td><a>{{ $d->status }}</a></td>
-<td><a href={{ asset($d->file) }}>{{ $d->file }}</a></td>
+<td><a href="{{route('svhunting.download',['lect' => $d->lecterur])}}">{{ $d->file }}</a></td>
 <td>
 <a href="{{route('svhunting.update',['lect' => $d->lecterur])}}"><button class="button button1">Edit</button></a><br>
 <a href="{{route('svhunting.delete',['lect' => $d->lecterur])}}"><button class="button button1">Delete</button></a></td>

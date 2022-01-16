@@ -160,26 +160,18 @@ public function SvhuntingList(){
     }
 
 public function SvhuntingView($lect){
-    
     $sv= User::findOrFail($lect);
-
     return view('student.svhunting.svhunting_view',compact('sv'));
 }
 
-public function SvhuntingForm($lect){
-    
+public function SvhuntingForm($lect){ 
     $sv= User::findOrFail($lect);
-
     return view('student.svhunting.svhunting_form',compact('sv'));
-
-   
 }
 
 public function SvhuntingUpload($lect){
-
     $sv= User::findOrFail($lect);
     return view('student.svhunting.svhunting_form',compact('sv'));
-   
 }
 public function SvhuntingUploadPost(Request $request,$lect){
     $id = Auth::user()->id;
@@ -190,38 +182,28 @@ public function SvhuntingUploadPost(Request $request,$lect){
         'file' => 'required|mimes:pdf,xlx,csv|max:2048',
     ]);
     $fileName = time().'.'.$request->file->extension(); 
-
     $data=array('student'=>$user->id,"lecterur"=>$sv->id,"file"=>$fileName,"status"=>$status);
     DB::table('proposal')->insert($data);
-
     echo "Record inserted successfully.<br/>";
-
     return view('student.svhunting.svhunting_list',compact('user'));
 }
 
 public function SvhuntingDelete($lect){
-
     $id = Auth::user()->id;
     $user = User::find($id);
     $sv= User::findOrFail($lect);
     $data= DB::table('proposal')->where('student',$user->id)->where('lecterur',$sv->id)->delete();
-
     return view('student.svhunting.svhunting_list',compact('user'));
-   
 }
 
 public function SvhuntingUpdate($lect){
-    
     $sv= User::findOrFail($lect);
-
     return view('student.svhunting.svhunting_update',compact('sv'));
 }
 
 public function SvhuntingEdit($lect){
-
     $sv= User::findOrFail($lect);
     return view('student.svhunting.svhunting_update',compact('sv'));
-   
 }
 public function SvhuntingEditPost(Request $request,$lect){
     $id = Auth::user()->id;
@@ -233,12 +215,15 @@ public function SvhuntingEditPost(Request $request,$lect){
     $fileName = time().'.'.$request->file->extension(); 
     DB::update('update proposal set file=? where student = ? and lecterur = ?',
     [$fileName,$user->id,$sv->id]);
-    
-
     echo "Record updated successfully.<br/>";
-
     return view('student.svhunting.svhunting_list',compact('user'));
 }
+
+public function SvhuntingDownload($lect){
+    $id = Auth::user()->id;
+    $user = User::find($id);
+}
+//SVHunting module END
 
 
 
