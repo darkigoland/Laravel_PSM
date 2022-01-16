@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ExpertiseController;
+use App\Http\Controllers\ApprovalController;
+use App\Http\Controllers\SubmitController;
 
 /*
 |--------------------------------------------------------------------------
@@ -98,8 +100,8 @@ Route::get('svhunting/edit{lect}', [HomeController::class, 'SvhuntingEdit'])->na
 Route::post('svhunting/Edit{lect}', [HomeController::class, 'SvhuntingEditPost'])->name('svhunting.edit.post');
 
 //ManageApprovalandReport
-Route::get('/submit',[App\Http\Controllers\SubmitController::class,'submitForm']);
+Route::resource('/approval-page', ApprovalController::class);
 
-Route::post('/submit',[App\Http\Controllers\SubmitController::class,'submitFile'])->name('submit.submitfile');
-  
-Route::resource('approval',ApprovalController::class);
+Route::get('/submit-file', [SubmitController::class, 'submitForm']);
+
+Route::post('/submit-file', [SubmitController::class, 'submit'])->name('submit');
