@@ -3,10 +3,14 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SubmitController;
+<<<<<<< Updated upstream
 use App\Http\Controllers\ApprovalController;
 use App\Http\Controllers\ExpertiseController;
 use App\Http\Controllers\ManageInventoryController;
 
+=======
+use App\Http\Controllers\LogbookController;
+>>>>>>> Stashed changes
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -108,6 +112,7 @@ Route::get('/submit-file', [SubmitController::class, 'submitForm']);
 
 Route::post('/submit-file', [SubmitController::class, 'submit'])->name('submit');
 
+<<<<<<< Updated upstream
 //ManageInventoryUsage
 Route::get('/std_Inventory_Home', [ManageInventoryController::class, 'std_InventoryHome'])->name('std_Inventory_Home');
 Route::get('/std_Make_Request', [ManageInventoryController::class, 'std_MakeRequest'])->name('std_Make_Request');
@@ -118,3 +123,7 @@ Route::post('update_Request', [ManageInventoryController::class, 'update_Request
 Route::get('/tech_request', [ManageInventoryController::class, 'tech_RequestPage'])->name('tech_Request');
 Route::get('view/{id}', [ManageInventoryController::class, 'tech_View']);
 Route::post('view', [ManageInventoryController::class, 'update']);
+=======
+//ManageLogbook
+Route::post('/savelogbook', [LogbookController::class, 'savelogbook'])->name('savelogbook');
+>>>>>>> Stashed changes
