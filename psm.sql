@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 10, 2022 at 02:42 AM
+-- Generation Time: Jan 17, 2022 at 02:36 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -108,16 +108,17 @@ INSERT INTO `intellectuals` (`id`, `name`, `created_at`, `updated_at`) VALUES
 --
 
 CREATE TABLE `logbook` (
-  `stud_id` varchar(10) NOT NULL,
+  `logbook_id` int(11) NOT NULL,
+  `student_id` varchar(10) NOT NULL,
   `stud_name` varchar(100) NOT NULL,
   `title` varchar(100) NOT NULL,
   `meet_date` date NOT NULL,
   `start_time` time NOT NULL,
   `end_time` time NOT NULL,
-  `progress ` longtext NOT NULL,
-  `detail ` longtext NOT NULL,
+  `progress` longtext NOT NULL,
+  `detail` longtext NOT NULL,
   `plan` longtext NOT NULL,
-  `status` longtext NOT NULL
+  `status` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -241,7 +242,10 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('nxhmBZC26NIW7RPOgQC5adL8p7gM0ozLbuhEOM1N', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiY01EU0pMQnBpRVMwOTJ1eENsSk50QXNKNjRDeHgyWk1MUGZidFlTSiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NTg6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9leHBlcnRpc2UvbGVjdHVyZXIvaW50ZWxsZWN0dWFsL3ZpZXciO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO3M6MTc6InBhc3N3b3JkX2hhc2hfd2ViIjtzOjYwOiIkMnkkMTAkVmF6NmdTQnNpUmVBWTBqdUJPN05FdWRTMGU3eE12enFoNmE1R0JLL1RHN2FxMmE2VWZCUEsiO30=', 1641753273);
+('d45a7PyaXJGayb5k7RYq6Tlz4Gjd6AQLcm8Tz1ep', 2, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiYmlld1hWVk9xeXhkYUlJSWt2MEJLZFNuSFhjeFVKWUFycXZlNnhFciI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NTI6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9leHBlcnRpc2Uvc3R1ZGVudC9wcm9maWxlL3ZpZXciO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToyO3M6MTc6InBhc3N3b3JkX2hhc2hfd2ViIjtzOjYwOiIkMnkkMTAkZ0tjUXJ3LzMyY3RIVTZ6L2hTaG5jdVM4YWVYWU9QSXUzTDNMV0trc2REMWo4Y1F1VkZMUUsiO30=', 1642420689),
+('eneuRQkUqO1ylhQ2CCDwDFNZn4st1CabUad0iNGq', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36', 'YToyOntzOjY6Il90b2tlbiI7czo0MDoiNFVBS3ZMMHdNT3NUeHN3M0JtWkZFeXpQd29RS3ZIWWRKVlBlTkpyZiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1642420528),
+('rcTjLQTgTbBo8otabzGLEyJBOCbKzizdmg5DFosM', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36', 'YTo1OntzOjM6InVybCI7YTowOnt9czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9sb2dpbiI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NjoiX3Rva2VuIjtzOjQwOiJzNFBTM0Z4WFBZUnFvbERSR1Fudkx6djhnS1BJaDN4YTZGamdrS2oxIjtzOjE3OiJwYXNzd29yZF9oYXNoX3dlYiI7czo2MDoiJDJ5JDEwJGdLY1Fydy8zMmN0SFU2ei9oU2huY3VTOGFlWFlPUEl1M0wzTFdLa3NkRDFqOGNRdVZGTFFLIjt9', 1642353720),
+('zkSl7R2pL6Qr3vnKYVSgrJJzMTzvRKOAz4NOLw65', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoieTJOa2s0dzR4RVdyRDlPdUQ3dnZvMmJjQU5qMDRoUW82RlRxaDVlUiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1642425955);
 
 -- --------------------------------------------------------
 
@@ -294,9 +298,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `staffID`, `phone`, `role`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `remember_token`, `current_team_id`, `image`, `created_at`, `updated_at`) VALUES
-(1, 'Lecturer', 'lect@gmail.com', 'AA1457', '01245781', 'lecturer', NULL, '$2y$10$Vaz6gSBsiReAY0juBO7NEudS0e7xMvzqh6a5GBK/TG7aq2a6UfBPK', NULL, NULL, NULL, NULL, '202201010732LOGO-MALAYSIA-PRIHATIN.png', '2021-12-17 16:58:06', '2021-12-31 23:32:03'),
-(2, 'Student', 'stud@gmail.com', NULL, NULL, 'student', NULL, '$2y$10$gKcQrw/32ctHU6z/hShncuS8aeXYOPIu3L3LWKksdD1j8cQuVFLQK', NULL, NULL, NULL, NULL, NULL, '2021-12-17 16:58:27', '2021-12-17 16:58:27'),
-(3, 'Technician', 'tech@gmail.com', NULL, NULL, 'technician', NULL, '$2y$10$OxWDzGOCPZNy0M0RgQHvyuWHZ7rMyDCpzylGEkBV3jOrmtqmn7LpO', NULL, NULL, NULL, NULL, NULL, '2021-12-17 16:58:47', '2021-12-17 16:58:47');
+(1, '', 'lect@gmail.com', NULL, NULL, 'lecturer', NULL, '$2y$10$Vaz6gSBsiReAY0juBO7NEudS0e7xMvzqh6a5GBK/TG7aq2a6UfBPK', NULL, NULL, NULL, NULL, NULL, '2021-12-17 16:58:06', '2021-12-31 23:32:03'),
+(2, '', 'stud@gmail.com', NULL, NULL, 'student', NULL, '$2y$10$gKcQrw/32ctHU6z/hShncuS8aeXYOPIu3L3LWKksdD1j8cQuVFLQK', NULL, NULL, NULL, NULL, NULL, '2021-12-17 16:58:27', '2021-12-17 16:58:27'),
+(3, '', 'tech@gmail.com', NULL, NULL, 'technician', NULL, '$2y$10$OxWDzGOCPZNy0M0RgQHvyuWHZ7rMyDCpzylGEkBV3jOrmtqmn7LpO', NULL, NULL, NULL, NULL, NULL, '2021-12-17 16:58:47', '2021-12-17 16:58:47');
 
 --
 -- Indexes for dumped tables
@@ -333,7 +337,7 @@ ALTER TABLE `intellectuals`
 -- Indexes for table `logbook`
 --
 ALTER TABLE `logbook`
-  ADD PRIMARY KEY (`stud_id`);
+  ADD PRIMARY KEY (`logbook_id`);
 
 --
 -- Indexes for table `migrations`
@@ -411,6 +415,12 @@ ALTER TABLE `failed_jobs`
 --
 ALTER TABLE `intellectuals`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `logbook`
+--
+ALTER TABLE `logbook`
+  MODIFY `logbook_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `migrations`
