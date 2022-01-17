@@ -120,4 +120,4 @@ Route::get('/tech_request', [ManageInventoryController::class, 'tech_RequestPage
 Route::get('view/{id}', [ManageInventoryController::class, 'tech_View']);
 Route::post('view', [ManageInventoryController::class, 'update']);
 //ManageLogbook
-Route::post('/savelogbook', [LogbookController::class, 'savelogbook'])->name('savelogbook');
+Route::get('/savelogbook', [LogbookController::class, 'savelogbook'])->name('savelogbook');

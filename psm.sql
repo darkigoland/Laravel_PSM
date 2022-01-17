@@ -110,7 +110,7 @@ INSERT INTO `intellectuals` (`id`, `name`, `created_at`, `updated_at`) VALUES
 CREATE TABLE `logbook` (
   `logbook_id` int(11) NOT NULL,
   `student_id` varchar(10) NOT NULL,
-  `stud_name` varchar(100) NOT NULL,
+  `name` varchar(100) NOT NULL,
   `title` varchar(100) NOT NULL,
   `meet_date` date NOT NULL,
   `start_time` time NOT NULL,

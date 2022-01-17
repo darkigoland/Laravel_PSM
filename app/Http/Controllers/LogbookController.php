@@ -11,8 +11,16 @@ class LogbookController extends Controller
     public function savelogbook(Request $request) {
         
         $newlogbook = new logbook;
-        $newlogbook->name = $request->logbook;
-        $newlogbook->is_complete = 0;
+        $newlogbook->name = $request->name;
+        $newlogbook->student_id = $request->studentid;
+        $newlogbook->title = $request->title;
+        $newlogbook->meetdate= $request->meet_date;
+        $newlogbook->starttime= $request->start_time;
+        $newlogbook->endtime = $request->end_time;
+        $newlogbook->progress = $request->progress;
+        $newlogbook->details = $request->detail;
+        $newlogbook->plan = $request->plan;
+        $newlogbook->status = "pending";
         $newlogbook->save();
 
         return view('LogBookForm');

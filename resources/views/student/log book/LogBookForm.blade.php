@@ -9,7 +9,7 @@
 </head>
 <body>
     
-    <form method="post" action="{{ route('savelogbook')}}" enctype="multipart/form-data">
+    <form method="get" action="{{ route('savelogbook')}}" enctype="multipart/form-data">
 
         <fieldset>
             <legend>Log Book</legend>
