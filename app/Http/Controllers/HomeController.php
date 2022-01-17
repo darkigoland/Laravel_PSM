@@ -222,6 +222,9 @@ public function SvhuntingEditPost(Request $request,$lect){
 public function SvhuntingDownload($lect){
     $id = Auth::user()->id;
     $user = User::find($id);
+    $sv= User::findOrFail($lect);
+    $download = DB::table('proposal')->all();
+    return view('student.svhunting.svhunting_list',compact('download'));
 }
 //SVHunting module END
 
