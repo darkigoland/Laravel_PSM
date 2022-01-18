@@ -89,7 +89,7 @@ class HomeController extends Controller
         $data->name = $request->name;
         $data->email = $request->email;
         $data->phone = $request->phone;
-        $data->userID = $request->userID;
+        $data->staffID = $request->staffID;
 
         if ($request->file('image')){
             $file = $request->file('image');
@@ -128,10 +128,8 @@ public function StudProfileStore(Request $request){
     $data->name = $request->name;
     $data->email = $request->email;
     $data->phone = $request->phone;
-    $data->userID = $request->userID;
-    $data->course = $request->course;
-    $data->projName = $request->projName;
-    $data->projDesc = $request->projDesc;
+    $data->staffID = $request->staffID;
+  
 
     if ($request->file('image')){
         $file = $request->file('image');

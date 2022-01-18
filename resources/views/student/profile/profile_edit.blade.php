@@ -49,26 +49,8 @@
                 </div>
               </div><!-- row -->
 
-              <div class="row mg-t-20">
-              <h5 class="card-body-title col-sm-4">Course: </h6>
-                <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                    <input class="form-control" type="text" name="course" value="{{ $editData->course }}" required="" >
-                </div>
-              </div><!-- row -->
+             
               
-              <div class="row mg-t-20">
-              <h5 class="card-body-title col-sm-4">Project Title Name: </h6>
-                <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                    <input class="form-control" type="text" name="projName" value="{{ $editData->projName }}" required="" >
-                </div>
-              </div><!-- row -->
-
-              <div class="row mg-t-20">
-              <h5 class="card-body-title col-sm-4">Project Description: </h6>
-                <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                    <input class="form-control" type="text" name="projDesc" value="{{ $editData->projDesc }}" required="" >
-                </div>
-              </div><!-- row -->
 
               <div class="form-layout-footer mg-t-30">
                 <button class="btn btn-info mg-r-5">Update Profile</button>
