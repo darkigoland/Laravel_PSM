@@ -21,7 +21,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($approvals as $item)
+                                @foreach($approval as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $item->stud_id }}</td>
@@ -29,7 +29,6 @@
                                         <td>{{ $item->proposal_status }}</td>
  
                                         <td>
-                                            <a href="{{ url('/approval/' . $item->stud_id) }}" title="View Proposal"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a href="{{ url('/approval/' . $item->stud_id . '/approve') }}" title="Approve Proposal"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Approve</button></a>
  
                                             <form method="POST" action="{{ url('/contact' . '/' . $item->stud_id) }}" accept-charset="UTF-8" style="display:inline">

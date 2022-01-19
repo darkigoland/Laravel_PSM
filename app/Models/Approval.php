@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Approval extends Model
 {
-    protected $table = 'approvals';
+    protected $table = 'students';
     protected $primaryKey = 'stud_id';
     protected $fillable = ['stud_name', 'proposal_status','proposal'];
 }

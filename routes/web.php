@@ -103,7 +103,7 @@ Route::post('svhunting/Edit{lect}', [HomeController::class, 'SvhuntingEditPost']
 Route::get('svhunting/download{lect}', [HomeController::class, 'SvhuntingDownload'])->name('svhunting.download');
 
 //ManageApprovalandReport
-Route::resource('/approval-page', ApprovalController::class);
+Route::get('/view', [ApprovalController::class,'view'])->name('view');
 
 Route::get('/submit-file', [SubmitController::class, 'submitForm']);
 

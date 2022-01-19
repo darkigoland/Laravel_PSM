@@ -12,7 +12,7 @@ class SubmitController extends Controller
 {
    public function submitForm()
    {
-     return view('approval.index2');
+     return view('approval.submit');
    }
 
    public function submit(Request $request)

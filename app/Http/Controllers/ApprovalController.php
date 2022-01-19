@@ -8,25 +8,19 @@ use Illuminate\Support\Facades\DB;
 class ApprovalController extends Controller
 {
   
-    public function index()
+    public function view()
     {
-        $approvals = Approval::all();
-      return view ('approval.index')->with('approval', $approvals);
+        $students = Approval::all();
+      return view ('approval.index')->with('approval', $students);
     }
     
-    public function view($stud_id)
-    {
-        $approvals = Approval::find($stud_id);
-        return view('approval.index')->with('approval', $approvals);
-    }
-
   
     public function approve(Request $request, $stud_id)
     {
-        $approvals = Approval::find($stud_id);
-        $approvals->update($request->all());
-        $approvals =DB::table('students')
-                   ->where ('proposal_status','pending')
+        $students = Approval::find($stud_id);
+        $students->update($request->all());
+        $students =DB::table('students')
+                   ->where ('proposal_status','Pending')
                    ->update(['proposal_status'=>'Approved']);
         return redirect('approval')->with('flash_message', 'Proposal Updated!');  
     }
