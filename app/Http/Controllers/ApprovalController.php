@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Approval;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ApprovalController extends Controller
 {
@@ -16,22 +17,17 @@ class ApprovalController extends Controller
     public function view($stud_id)
     {
         $approvals = Approval::find($stud_id);
-        return view('approval.show')->with('approval', $approvals);
-    }
-
-    
-    public function edit($stud_id)
-    {
-        $approvals = Approval::find($stud_id);
-        return view('approval.edit')->with('approval', $approvals);
+        return view('approval.index')->with('approval', $approvals);
     }
 
   
     public function approve(Request $request, $stud_id)
     {
         $approvals = Approval::find($stud_id);
-        $input = $request->all();
-        $approvals->update($input);
+        $approvals->update($request->all());
+        $approvals =DB::table('students')
+                   ->where ('proposal_status','pending')
+                   ->update(['proposal_status'=>'Approved']);
         return redirect('approval')->with('flash_message', 'Proposal Updated!');  
     }
 
