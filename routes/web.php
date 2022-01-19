@@ -108,7 +108,7 @@ Route::post('/reject', [ApprovalController::class,'reject'])->name('reject');
 
 Route::get('/submit-file', [SubmitController::class, 'submitForm']);
 
-Route::post('/submit', [SubmitController::class, 'submit'])->name('submit');
+Route::post('/submit-file', [SubmitController::class, 'submit'])->name('submit');
 
 //ManageInventoryUsage
 Route::get('/std_Inventory_Home', [ManageInventoryController::class, 'std_InventoryHome'])->name('std_Inventory_Home');
