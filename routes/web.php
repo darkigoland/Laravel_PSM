@@ -103,8 +103,8 @@ Route::get('svhunting/download{lect}', [HomeController::class, 'SvhuntingDownloa
 
 //ManageApprovalandReport
 Route::get('/view', [ApprovalController::class,'view'])->name('view');
-Route::get('/approve', [ApprovalController::class,'approve'])->name('approve');
-Route::get('/reject', [ApprovalController::class,'reject'])->name('reject');
+Route::get('/approve', [ApprovalController::class,'approve'])->name('approval.approve');
+Route::get('/reject', [ApprovalController::class,'reject'])->name('aprroval.reject');
 
 Route::get('/submit-file', [SubmitController::class, 'submitForm']);
 

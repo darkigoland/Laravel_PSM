@@ -20,12 +20,10 @@
             <td>{{ ++$i }}</td>
             <td>{{ $approval->stud_id }}</td>
             <td>{{ $approval->stud_name }}</td>
-            <td>{{ $approval->stud_prposal }}</td>
+            <td>{{ $approval->stud_proposal }}</td>
             <td>{{ $approval->proposal_status }}</td>
             <td>
                 <form action="{{ route('approval.reject',$approval->stud_id) }}" method="POST">
-   
-                    <a class="btn btn-info" href="{{ route('approval.view',$approval->stud_id) }}">View</a>
     
                     <a class="btn btn-primary" href="{{ route('approval.approve',$approval->stud_id) }}">Approve</a>
    
