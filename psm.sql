@@ -104,10 +104,10 @@ INSERT INTO `intellectuals` (`id`, `name`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `logbook`
+-- Table structure for table `logbooks`
 --
 
-CREATE TABLE `logbook` (
+CREATE TABLE `logbooks` (
   `logbook_id` int(11) NOT NULL,
   `student_id` varchar(10) NOT NULL,
   `name` varchar(100) NOT NULL,
