@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateApprovalsTable extends Migration
+class CreateStudentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,14 @@ class CreateApprovalsTable extends Migration
      */
     public function up()
     {
-        Schema::create('approvals', function (Blueprint $table) {
+        Schema::create('students', function (Blueprint $table) {
             $table->stud_id();
             $table->string('stud_name');
             $table->string('proposal_status');
-            $table->blob('proposal');
+            $table->binary('proposal');
+            $table->string('project_title');
+            $table->binary('project_report');
+            $table->string('file_path');
             $table->timestamps();
         });
     }
@@ -29,6 +32,6 @@ class CreateApprovalsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('approvals');
+        Schema::dropIfExists('students');
     }
 }
