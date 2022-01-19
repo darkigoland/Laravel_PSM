@@ -103,8 +103,8 @@ Route::get('svhunting/download{lect}', [HomeController::class, 'SvhuntingDownloa
 
 //ManageApprovalandReport
 Route::get('/view', [ApprovalController::class,'view'])->name('view');
-Route::get('/approve', [ApprovalController::class,'approve'])->name('approval.approve');
-Route::get('/reject', [ApprovalController::class,'reject'])->name('aprroval.reject');
+Route::post('/approve', [ApprovalController::class,'approve'])->name('approve');
+Route::post('/reject', [ApprovalController::class,'reject'])->name('reject');
 
 Route::get('/submit-file', [SubmitController::class, 'submitForm']);
 
@@ -123,7 +123,7 @@ Route::post('view', [ManageInventoryController::class, 'update']);
 
 //ManageLogbook
 Route::post('/savelogbook', [LogbookController::class, 'savelogbook'])->name('savelogbook');
-Route::get('/savelogbook', [LogbookController::class, 'savelogbook']);
+Route::get('/savelogbook', [SubmitController::class, 'savelogbook']);
 
 //ManageTitle
 //list

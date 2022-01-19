@@ -19,8 +19,6 @@ class CreateStudentsTable extends Migration
             $table->string('proposal_status');
             $table->binary('proposal');
             $table->string('project_title');
-            $table->binary('project_report');
-            $table->string('file_path');
             $table->timestamps();
         });
     }
