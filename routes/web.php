@@ -6,7 +6,6 @@ use App\Http\Controllers\SubmitController;
 use App\Http\Controllers\ApprovalController;
 use App\Http\Controllers\ExpertiseController;
 use App\Http\Controllers\ManageInventoryController;
-
 use App\Http\Controllers\LogbookController;
 /*
 |--------------------------------------------------------------------------
@@ -119,5 +118,7 @@ Route::post('update_Request', [ManageInventoryController::class, 'update_Request
 Route::get('/tech_request', [ManageInventoryController::class, 'tech_RequestPage'])->name('tech_Request');
 Route::get('view/{id}', [ManageInventoryController::class, 'tech_View']);
 Route::post('view', [ManageInventoryController::class, 'update']);
+
 //ManageLogbook
-Route::get('/savelogbook', [LogbookController::class, 'savelogbook'])->name('savelogbook');
+Route::post('/savelogbook', [LogbookController::class, 'savelogbook'])->name('savelogbook');
+Route::get('/savelogbook', [SubmitController::class, 'savelogbook']);

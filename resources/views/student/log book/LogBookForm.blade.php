@@ -11,7 +11,7 @@
     
     <form method="get" action="{{ route('savelogbook')}}" enctype="multipart/form-data">
 
-        <fieldset>
+        
             <legend>Log Book</legend>
             <label for="name">Name:</label>
             <input type="text" id="name" name="name"><br>
@@ -39,7 +39,7 @@
             <textarea id="plan" rows="4" cols="50" ></textarea><br>
 
             <input type="submit" value="Save">
-        </fieldset>
+        
     </form>
 
 </body>
