@@ -22,14 +22,14 @@ class ApprovalController extends Controller
         $students =DB::table('students')
                    ->where ('proposal_status','Pending')
                    ->update(['proposal_status'=>'Approved']);
-        return redirect('approval')->with('flash_message', 'Proposal Updated!');  
+        return redirect('approval.index')->with('flash_message', 'Proposal Updated!');  
     }
 
    
     public function reject($stud_id)
     {
         Approval::destroy($stud_id);
-        return redirect('approval')->with('flash_message', 'Proposal deleted!');  
+        return redirect('approval.index')->with('flash_message', 'Proposal deleted!');  
     }
 
 }

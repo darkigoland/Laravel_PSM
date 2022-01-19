@@ -17,6 +17,7 @@
                                         <th>Student ID</th>
                                         <th>Student Name</th>
                                         <th>Proposal Status</th>
+                                        <th>Proposal</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -27,6 +28,7 @@
                                         <td>{{ $item->stud_id }}</td>
                                         <td>{{ $item->stud_name }}</td>
                                         <td>{{ $item->proposal_status }}</td>
+                                        <td>{{ $item->proposal }}</td>
  
                                         <td>
                                             <a href="{{ url('/approval/' . $item->stud_id . '/approve') }}" title="Approve Proposal"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Approve</button></a>
