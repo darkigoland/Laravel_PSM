@@ -74,6 +74,11 @@ Route::get('lecturer/intellectual/edit/{id}', [ExpertiseController::class, 'Lect
 
 Route::get('lecturer/intellectual/delete/{id}', [ExpertiseController::class, 'LectIntDelete'])->name('lecturer.intellectual.delete');
 
+//studemt expertise
+Route::get('student/expertise/view', [ExpertiseController::class, 'StdExpView'])->name('student.expertise.view');
+
+Route::get('student/expertise/profile{lect}', [ExpertiseController::class, 'StdProView'])->name('student.expertise.profile');
+
 //Profile Student
 Route::get('student/profile/view', [HomeController::class, 'StudProfileView'])->name('student.profile.view');
 

@@ -7,5 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Expertise extends Model
 {
-    use HasFactory;
+    public function teach(){
+        return $this->belongsTo(Teaching::class,'teach_id','id');
+    }
+
+    public function research(){
+        return $this->belongsTo(Research::class,'research_id','id');
+    }
+
+    public function intel(){
+        return $this->belongsTo(Intellectual::class,'int_id','id');
+    }
 }

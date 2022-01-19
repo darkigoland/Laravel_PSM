@@ -138,5 +138,19 @@ class ExpertiseController extends Controller
         return redirect()->route('lecturer.intellectual.view')->with($notification);
     }
 
+    public function StdExpView(){
+        $data['lecturers'] = User::where('role','lecturer')->get();
+        return view('student.expertise.exp_view',$data);
+    }
+
+    
+public function StdProView($lect){
+    $sv= User::findOrFail($lect);
+    $data['teach'] = Teaching::all();
+    $data['research'] = Research::all();
+    $data['intellect'] = Intellectual::all();
+    return view('student.expertise.profile_view',compact('sv'));
+}
+
 
 }
