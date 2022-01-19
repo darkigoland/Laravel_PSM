@@ -2,10 +2,10 @@
 
 <div class="sl-logo"><a href="{{route('index')}}"><i class="icon ion-android-star-outline"></i> PSM MS</a></div>
     <div class="sl-sideleft">
-      
-       
-        
-   
+
+
+
+
 
       <label class="sidebar-label">Navigation</label>
       <div class="sl-sideleft-menu">
@@ -27,7 +27,7 @@
             <span class="menu-item-label">SV HUNTING</span>
           </div><!-- menu-item -->
         </a><!-- sl-menu-link -->
-        <a href="widgets.html" class="sl-menu-link">
+        <a href="{{route('title.list')}}" class="sl-menu-link">
           <div class="sl-menu-item">
             <i class="menu-item-icon icon ion-ios-photos-outline tx-20"></i>
             <span class="menu-item-label">TITTLE</span>
@@ -51,8 +51,8 @@
             <span class="menu-item-label">LOGBOOK</span>
           </div><!-- menu-item -->
         </a><!-- sl-menu-link -->
-        
+
       </div><!-- sl-sideleft-menu -->
-     
+
       <br>
     </div>

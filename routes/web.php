@@ -124,3 +124,16 @@ Route::post('view', [ManageInventoryController::class, 'update']);
 //ManageLogbook
 Route::post('/savelogbook', [LogbookController::class, 'savelogbook'])->name('savelogbook');
 Route::get('/savelogbook', [SubmitController::class, 'savelogbook']);
+
+//ManageTitle
+//list
+Route::get('/titlelist', [TitleController::class, 'TitleStudList'])->name('title.list');
+Route::get('/titlelists', [TitleController::class, 'TitleLectList'])->name('title.lists');
+//view
+Route::get('/title', [TitleController::class, 'TitleStud'])->name('title.view');
+Route::get('/titles', [TitleController::class, 'TitleLect'])->name('title.views');
+//delete
+Route::get('/titlelists/delete/{titleID}', [TitleController::class, 'delete']);
+//add
+Route::post('/add', [TitleController::class, 'titleAdd']);
+Route::get('/addForm', [TitleController::class, 'addTitle']);
