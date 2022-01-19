@@ -6,7 +6,6 @@ use App\Http\Controllers\SubmitController;
 use App\Http\Controllers\ApprovalController;
 use App\Http\Controllers\ExpertiseController;
 use App\Http\Controllers\ManageInventoryController;
-
 use App\Http\Controllers\LogbookController;
 /*
 |--------------------------------------------------------------------------
@@ -108,7 +107,9 @@ Route::post('svhunting/Edit{lect}', [HomeController::class, 'SvhuntingEditPost']
 Route::get('svhunting/download{lect}', [HomeController::class, 'SvhuntingDownload'])->name('svhunting.download');
 
 //ManageApprovalandReport
-Route::resource('/approval-page', ApprovalController::class);
+Route::get('/view', [ApprovalController::class,'view'])->name('view');
+Route::post('/approve', [ApprovalController::class,'approve'])->name('approve');
+Route::post('/reject', [ApprovalController::class,'reject'])->name('reject');
 
 Route::get('/submit-file', [SubmitController::class, 'submitForm']);
 
@@ -124,5 +125,20 @@ Route::post('update_Request', [ManageInventoryController::class, 'update_Request
 Route::get('/tech_request', [ManageInventoryController::class, 'tech_RequestPage'])->name('tech_Request');
 Route::get('view/{id}', [ManageInventoryController::class, 'tech_View']);
 Route::post('view', [ManageInventoryController::class, 'update']);
+
 //ManageLogbook
-Route::get('/savelogbook', [LogbookController::class, 'savelogbook'])->name('savelogbook');
+Route::post('/savelogbook', [LogbookController::class, 'savelogbook'])->name('savelogbook');
+Route::get('/savelogbook', [SubmitController::class, 'savelogbook']);
+
+//ManageTitle
+//list
+Route::get('/titlelist', [TitleController::class, 'TitleStudList'])->name('title.list');
+Route::get('/titlelists', [TitleController::class, 'TitleLectList'])->name('title.lists');
+//view
+Route::get('/title', [TitleController::class, 'TitleStud'])->name('title.view');
+Route::get('/titles', [TitleController::class, 'TitleLect'])->name('title.views');
+//delete
+Route::get('/titlelists/delete/{titleID}', [TitleController::class, 'delete']);
+//add
+Route::post('/add', [TitleController::class, 'titleAdd']);
+Route::get('/addForm', [TitleController::class, 'addTitle']);
