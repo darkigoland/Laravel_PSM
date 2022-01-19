@@ -123,7 +123,7 @@ Route::post('view', [ManageInventoryController::class, 'update']);
 
 //ManageLogbook
 Route::post('/savelogbook', [LogbookController::class, 'savelogbook'])->name('savelogbook');
-Route::get('/savelogbook', [SubmitController::class, 'savelogbook']);
+Route::get('/savelogbook', [LogbookController::class, 'savelogbook']);
 
 //ManageTitle
 //list
