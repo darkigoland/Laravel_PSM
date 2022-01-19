@@ -112,7 +112,7 @@ CREATE TABLE `logbooks` (
   `student_id` varchar(10) NOT NULL,
   `name` varchar(100) NOT NULL,
   `title` varchar(100) NOT NULL,
-  `meet_date` date NOT NULL,
+  `meetdate` date NOT NULL,
   `start_time` time NOT NULL,
   `end_time` time NOT NULL,
   `progress` longtext NOT NULL,
