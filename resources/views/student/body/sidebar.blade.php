@@ -45,7 +45,7 @@
             <span class="menu-item-label">APPROVAL & REPORT</span>
           </div><!-- menu-item -->
         </a><!-- sl-menu-link -->
-        <a href="widgets.html" class="sl-menu-link">
+        <a href="{{ route('savelogbook') }}" class="sl-menu-link">
           <div class="sl-menu-item">
             <i class="menu-item-icon icon ion-ios-book-outline tx-20"></i>
             <span class="menu-item-label">LOGBOOK</span>
